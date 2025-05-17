@@ -194,7 +194,7 @@ public class CashDropFetcher {
                 }
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            System.err.println("Failed to list files in directory: " + directoryName);
             e.printStackTrace();
         }
     }

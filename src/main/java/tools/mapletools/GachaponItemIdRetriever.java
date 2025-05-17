@@ -312,7 +312,7 @@ public class GachaponItemIdRetriever {
             try {
                 Files.createDirectories(file.getParent());
             } catch (IOException e) {
-                // TODO Auto-generated catch block
+                System.err.println("Failed to create directory: " + file.getParent());
                 e.printStackTrace();
             }
         }

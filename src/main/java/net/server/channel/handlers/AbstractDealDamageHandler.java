@@ -149,8 +149,7 @@ public abstract class AbstractDealDamageHandler extends AbstractPacketHandler {
         }
     }
 
-    // TODO: add position
-    public record AttackTarget(short delay, List<Integer> damageLines) {}
+    public record AttackTarget(short delay, List<Integer> damageLines, Point position) {}
 
     protected void applyAttack(AttackInfo attack, final Character player, int attackCount) {
         final MapleMap map = player.getMap();
@@ -889,7 +888,7 @@ public abstract class AbstractDealDamageHandler extends AbstractPacketHandler {
             if (ret.skill != Corsair.RAPID_FIRE || ret.skill != Aran.HIDDEN_FULL_DOUBLE || ret.skill != Aran.HIDDEN_FULL_TRIPLE || ret.skill != Aran.HIDDEN_OVER_DOUBLE || ret.skill != Aran.HIDDEN_OVER_TRIPLE) {
                 p.skip(4);
             }
-            ret.targets.put(oid, new AttackTarget(delay, damageLines));
+            ret.targets.put(oid, new AttackTarget(delay, damageLines, monster != null ? monster.getPosition() : null));
         }
         if (ret.skill == NightWalker.POISON_BOMB) { // Poison Bomb
             p.skip(4);
@@ -932,7 +931,7 @@ public abstract class AbstractDealDamageHandler extends AbstractPacketHandler {
         attackInfo.attackDelay = attackDelay;
 
         Map<Integer, AttackTarget> targets = new HashMap<>();
-        targetDamage.forEach((id, damage) -> targets.put(id, new AttackTarget(attackDelay, damage)));
+        targetDamage.forEach((id, damage) -> targets.put(id, new AttackTarget(attackDelay, damage, null)));
         attackInfo.targets = targets;
         return attackInfo;
     }
