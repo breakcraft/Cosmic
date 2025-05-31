@@ -6,20 +6,43 @@ import database.note.NoteDao;
 import model.Note;
 import net.packet.out.ShowNotesPacket;
 import net.server.Server;
+import net.server.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NoteService {
     private static final Logger log = LoggerFactory.getLogger(NoteService.class);
 
+    static final int MAX_INBOX_SIZE = 100;
+
     private final NoteDao noteDao;
+    private final Function<String, Integer> characterIdLookup;
+    private final Predicate<String> onlineCheck;
 
     public NoteService(NoteDao noteDao) {
+        this(noteDao, client.Character::getIdByName, NoteService::isOnline);
+    }
+
+    public NoteService(NoteDao noteDao, Function<String, Integer> characterIdLookup,
+                       Predicate<String> onlineCheck) {
         this.noteDao = noteDao;
+        this.characterIdLookup = characterIdLookup;
+        this.onlineCheck = onlineCheck;
+    }
+
+    private static boolean isOnline(String name) {
+        for (World world : Server.getInstance().getWorlds()) {
+            if (world.getPlayerStorage().getCharacterByName(name) != null) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -27,7 +50,7 @@ public class NoteService {
      *
      * @return Send success
      */
-    public boolean sendNormal(String message, String senderName, String receiverName) {
+    public NoteSendResult sendNormal(String message, String senderName, String receiverName) {
         Note normalNote = Note.createNormal(message, senderName, receiverName, Server.getInstance().getCurrentTime());
         return send(normalNote);
     }
@@ -37,24 +60,31 @@ public class NoteService {
      *
      * @return Send success
      */
-    public boolean sendWithFame(String message, String senderName, String receiverName) {
+    public NoteSendResult sendWithFame(String message, String senderName, String receiverName) {
         Note noteWithFame = Note.createGift(message, senderName, receiverName, Server.getInstance().getCurrentTime());
         return send(noteWithFame);
     }
 
-    private boolean send(Note note) {
-        // TODO: handle the following cases (originally listed at PacketCreator#noteError)
-        /*
-         *  0 = Player online, use whisper
-         *  1 = Check player's name
-         *  2 = Receiver inbox full
-         */
+    private NoteSendResult send(Note note) {
         try {
+            if (onlineCheck.test(note.to())) {
+                return NoteSendResult.PLAYER_ONLINE;
+            }
+
+            int id = characterIdLookup.apply(note.to());
+            if (id < 0) {
+                return NoteSendResult.INVALID_PLAYER_NAME;
+            }
+
+            if (noteDao.findAllByTo(note.to()).size() >= MAX_INBOX_SIZE) {
+                return NoteSendResult.INBOX_FULL;
+            }
+
             noteDao.save(note);
-            return true;
+            return NoteSendResult.SUCCESS;
         } catch (DaoException e) {
             log.error("Failed to send note {}", note, e);
-            return false;
+            return NoteSendResult.FAILED;
         }
     }
 

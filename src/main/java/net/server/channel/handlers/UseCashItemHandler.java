@@ -65,6 +65,7 @@ import server.maps.MapleMap;
 import server.maps.MapleTVEffect;
 import server.maps.PlayerShopItem;
 import service.NoteService;
+import service.NoteSendResult;
 import tools.PacketCreator;
 import tools.Pair;
 
@@ -383,8 +384,8 @@ public final class UseCashItemHandler extends AbstractPacketHandler {
         } else if (itemType == 509) {
             String sendTo = p.readString();
             String msg = p.readString();
-            boolean sendSuccess = noteService.sendNormal(msg, player.getName(), sendTo);
-            if (sendSuccess) {
+            NoteSendResult sendResult = noteService.sendNormal(msg, player.getName(), sendTo);
+            if (sendResult == NoteSendResult.SUCCESS) {
                 remove(c, position, itemId);
                 c.sendPacket(new SendNoteSuccessPacket());
             }
