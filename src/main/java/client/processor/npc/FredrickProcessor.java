@@ -112,7 +112,7 @@ public class FredrickProcessor {
         try (Connection con = DatabaseConnection.getConnection()) {
             removeFredrickLog(con, cid);
         } catch (SQLException sqle) {
-            sqle.printStackTrace();
+            log.error("Exception", sqle);
         }
     }
 
@@ -133,7 +133,7 @@ public class FredrickProcessor {
                 ps.executeUpdate();
             }
         } catch (SQLException sqle) {
-            sqle.printStackTrace();
+            log.error("Exception", sqle);
         }
     }
 
@@ -155,7 +155,7 @@ public class FredrickProcessor {
                 ps.executeBatch();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -254,7 +254,7 @@ public class FredrickProcessor {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -267,7 +267,7 @@ public class FredrickProcessor {
 
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
             return false;
         }
     }
@@ -309,7 +309,7 @@ public class FredrickProcessor {
                         chr.message("An unknown error has occured.");
                     }
                 } catch (SQLException ex) {
-                    ex.printStackTrace();
+                    log.error("Exception", ex);
                 }
             } finally {
                 c.releaseClient();

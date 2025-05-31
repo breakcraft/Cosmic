@@ -163,7 +163,7 @@ public final class PlayerLoggedinHandler extends AbstractPacketHandler {
                     player = Character.loadCharFromDB(cid, c, true);
                     newcomer = true;
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    log.error("Exception", e);
                 }
 
                 if (player == null) { //If you are still getting null here then please just uninstall the game >.>, we dont need you fucking with the logs
@@ -455,7 +455,7 @@ public final class PlayerLoggedinHandler extends AbstractPacketHandler {
                 player.setLoginTime(System.currentTimeMillis());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         } finally {
             c.releaseClient();
         }
@@ -477,7 +477,7 @@ public final class PlayerLoggedinHandler extends AbstractPacketHandler {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 

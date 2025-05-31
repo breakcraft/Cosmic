@@ -236,7 +236,7 @@ public class Server {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -851,7 +851,7 @@ public class Server {
                 }
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            log.error("Exception", ex);
         }
 
         return rankSystem;
@@ -1575,7 +1575,7 @@ public class Server {
 
             wchars.add(curWorld, chars);
         } catch (SQLException sqle) {
-            sqle.printStackTrace();
+            log.error("Exception", sqle);
         }
 
         return new Pair<>(characterCount, wchars);
@@ -1593,7 +1593,7 @@ public class Server {
                 }
             }
         } catch (SQLException se) {
-            se.printStackTrace();
+            log.error("Exception", se);
         }
     }
 

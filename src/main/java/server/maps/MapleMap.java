@@ -1434,7 +1434,7 @@ public class MapleMap {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         } finally {     // thanks resinate for pointing out a memory leak possibly from an exception thrown
             monster.dispatchMonsterKilled(true);
             broadcastMessage(PacketCreator.killMonster(monster.getObjectId(), animation), monster.getPosition());
@@ -3154,7 +3154,7 @@ public class MapleMap {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         for (MapObject mo : getMapObjectsInRange(player.getPosition(), getRangedDistance(), rangedMapobjectTypes)) {
@@ -4264,7 +4264,7 @@ public class MapleMap {
             this.buffMonsters(team, skill);
             getReactorByOid(reactor.getObjectId()).hitReactor(((Character) this.getAllPlayer().get(0)).getClient());
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return 1;
     }

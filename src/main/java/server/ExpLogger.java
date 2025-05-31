@@ -28,7 +28,7 @@ public class ExpLogger {
         try {
             expLoggerQueue.put(expLogRecord);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -60,7 +60,7 @@ public class ExpLogger {
                 }
                 ps.executeBatch();
             } catch (SQLException sqle) {
-                sqle.printStackTrace();
+                log.error("Exception", sqle);
             }
         }
     };
@@ -82,7 +82,7 @@ public class ExpLogger {
             runThreadBeforeShutdown.start();
             return true;
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
             return false;
         }
     }

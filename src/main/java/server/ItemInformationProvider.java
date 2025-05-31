@@ -1550,7 +1550,7 @@ public class ItemInformationProvider {
                 monsterBookID.put(rs.getInt(1), rs.getInt(2));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -1767,7 +1767,7 @@ public class ItemInformationProvider {
          }
          }
          } catch (SQLException ex) {
-            ex.printStackTrace();
+            log.error("Exception", ex);
          }*/
         int tdex = chr.getDex(), tstr = chr.getStr(), tint = chr.getInt(), tluk = chr.getLuk(), fame = chr.getFame();
         if (chr.getJob() != Job.SUPERGM || chr.getJob() != Job.GM) {
@@ -1853,7 +1853,7 @@ public class ItemInformationProvider {
          }
          }
          } catch (SQLException ex) {
-            ex.printStackTrace();
+            log.error("Exception", ex);
          }*/
 
         int reqLevel = getEquipLevelReq(equip.getItemId());
@@ -2042,7 +2042,7 @@ public class ItemInformationProvider {
             statUpgradeMakerCache.put(itemId, statUpgd);
             return statUpgd;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
             return null;
         }
     }
@@ -2071,7 +2071,7 @@ public class ItemInformationProvider {
             mobCrystalMakerCache.put(leftoverId, itemid);
             return itemid;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return -1;
@@ -2114,7 +2114,7 @@ public class ItemInformationProvider {
                 }
                 makerItemCache.put(toCreate, new MakerItemCreateEntry(makerEntry));
             } catch (SQLException sqle) {
-                sqle.printStackTrace();
+                log.error("Exception", sqle);
                 makerEntry = null;
             }
         }
@@ -2126,7 +2126,7 @@ public class ItemInformationProvider {
         try {
             return getCrystalForLevel(getEquipLevelReq(equipId));
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return -1;
@@ -2136,7 +2136,7 @@ public class ItemInformationProvider {
         try {
             return getCrystalForLevel(getEquipLevelReq(equipId));
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return -1;
@@ -2155,7 +2155,7 @@ public class ItemInformationProvider {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return items;
@@ -2175,7 +2175,7 @@ public class ItemInformationProvider {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return fee;
@@ -2216,7 +2216,7 @@ public class ItemInformationProvider {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return list;
