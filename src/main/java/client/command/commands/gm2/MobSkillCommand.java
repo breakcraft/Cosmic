@@ -34,7 +34,7 @@ public class MobSkillCommand extends Command {
         Character chr = client.getPlayer();
         MobSkill mobSkill = possibleSkill.get();
         chr.getMap().getAllMonsters().forEach(
-                monster -> mobSkill.applyEffect(chr, monster, false, Collections.emptyList())
+                monster -> mobSkill.applyEffect(chr, monster, false)
         );
     }
 }

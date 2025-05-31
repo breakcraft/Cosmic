@@ -179,7 +179,7 @@ public class MobSkill {
     public void applyDelayedEffect(final Character player, final Monster monster, final boolean skill, int animationTime) {
         Runnable toRun = () -> {
             if (monster.isAlive()) {
-                applyEffect(player, monster, skill, null);
+                applyEffect(player, monster, skill);
             }
         };
 
@@ -187,20 +187,20 @@ public class MobSkill {
         service.registerOverallAction(monster.getMap().getId(), toRun, animationTime);
     }
 
-    public void applyEffect(Monster monster) {
-        applyEffect(null, monster, false, Collections.emptyList());
+    public List<Character> applyEffect(Monster monster) {
+        return applyEffect(null, monster, false);
     }
 
-    // TODO: avoid output argument banishPlayersOutput
-    public void applyEffect(Character player, Monster monster, boolean skill, List<Character> banishPlayersOutput) {
+    public List<Character> applyEffect(Character player, Monster monster, boolean skill) {
         // See if the MobSkill is successful before doing anything
         if (!makeChanceResult()) {
-            return;
+            return Collections.emptyList();
         }
 
         Disease disease = null;
         Map<MonsterStatus, Integer> stats = new EnumMap<>(MonsterStatus.class);
         List<Integer> reflection = new ArrayList<>();
+        List<Character> banishPlayers = new ArrayList<>();
         switch (id.type()) {
             case ATTACK_UP, ATTACK_UP_M, PAD -> stats.put(MonsterStatus.WEAPON_ATTACK_UP, x);
             case MAGIC_ATTACK_UP, MAGIC_ATTACK_UP_M, MAD -> stats.put(MonsterStatus.MAGIC_ATTACK_UP, x);
@@ -216,7 +216,7 @@ public class MobSkill {
             case SLOW -> disease = Disease.SLOW;
             case DISPEL -> applyDispelEffect(skill, monster, player);
             case SEDUCE -> disease = Disease.SEDUCE;
-            case BANISH -> applyBanishEffect(skill, monster, player, banishPlayersOutput);
+            case BANISH -> banishPlayers.addAll(applyBanishEffect(skill, monster, player));
             case AREA_POISON -> spawnMonsterMist(monster);
             case REVERSE_INPUT -> disease = Disease.CONFUSE;
             case UNDEAD -> disease = Disease.ZOMBIFY;
@@ -259,6 +259,7 @@ public class MobSkill {
         if (disease != null) {
             applyDisease(disease, skill, monster, player);
         }
+        return banishPlayers;
     }
 
     private void applyHealEffect(boolean skill, Monster monster) {
@@ -281,13 +282,11 @@ public class MobSkill {
         }
     }
 
-    private void applyBanishEffect(boolean skill, Monster monster, Character player,
-                                   List<Character> banishPlayersOutput) {
+    private List<Character> applyBanishEffect(boolean skill, Monster monster, Character player) {
         if (lt != null && rb != null && skill) {
-            banishPlayersOutput.addAll(getPlayersInRange(monster));
-        } else {
-            banishPlayersOutput.add(player);
+            return new ArrayList<>(getPlayersInRange(monster));
         }
+        return Collections.singletonList(player);
     }
 
     private void spawnMonsterMist(Monster monster) {
