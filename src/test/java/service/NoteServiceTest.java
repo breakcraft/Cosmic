@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static service.NoteSendResult.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.anyInt;
 import static org.mockito.Mockito.doThrow;
@@ -37,7 +38,7 @@ class NoteServiceTest {
     @BeforeEach
     void reset() {
         MockitoAnnotations.openMocks(this);
-        this.noteService = new NoteService(noteDao);
+        this.noteService = new NoteService(noteDao, name -> 1, n -> false);
     }
 
     @Test
@@ -46,9 +47,9 @@ class NoteServiceTest {
         String from = "from";
         String to = "to";
 
-        boolean success = noteService.sendNormal(message, from, to);
+        NoteSendResult result = noteService.sendNormal(message, from, to);
 
-        assertTrue(success);
+        assertEquals(NoteSendResult.SUCCESS, result);
         var noteCaptor = ArgumentCaptor.forClass(Note.class);
         verify(noteDao).save(noteCaptor.capture());
         var note = noteCaptor.getValue();
@@ -64,9 +65,9 @@ class NoteServiceTest {
         String from = "fameFrom";
         String to = "fameTo";
 
-        boolean success = noteService.sendWithFame(message, from, to);
+        NoteSendResult result = noteService.sendWithFame(message, from, to);
 
-        assertTrue(success);
+        assertEquals(NoteSendResult.SUCCESS, result);
         var noteCaptor = ArgumentCaptor.forClass(Note.class);
         verify(noteDao).save(noteCaptor.capture());
         var note = noteCaptor.getValue();
@@ -80,10 +81,41 @@ class NoteServiceTest {
     void sendFailure() {
         doThrow(daoException()).when(noteDao).save(any());
 
-        boolean success = noteService.sendNormal(string(), string(), string());
+        NoteSendResult result = noteService.sendNormal(string(), string(), string());
 
-        assertFalse(success);
+        assertEquals(NoteSendResult.FAILED, result);
         verify(noteDao).save(any());
+    }
+
+    @Test
+    void playerOnline() {
+        NoteService service = new NoteService(noteDao, name -> 1, n -> true);
+
+        NoteSendResult result = service.sendNormal("msg", "from", "to");
+
+        assertEquals(PLAYER_ONLINE, result);
+        verify(noteDao, never()).save(any());
+    }
+
+    @Test
+    void invalidPlayerName() {
+        NoteService service = new NoteService(noteDao, name -> -1, n -> false);
+
+        NoteSendResult result = service.sendNormal("msg", "from", "bad");
+
+        assertEquals(INVALID_PLAYER_NAME, result);
+        verify(noteDao, never()).save(any());
+    }
+
+    @Test
+    void receiverInboxFull() {
+        when(noteDao.findAllByTo(any())).thenReturn(Collections.nCopies(NoteService.MAX_INBOX_SIZE, anyNote()));
+        NoteService service = new NoteService(noteDao, name -> 1, n -> false);
+
+        NoteSendResult result = service.sendNormal("msg", "from", "full");
+
+        assertEquals(INBOX_FULL, result);
+        verify(noteDao, never()).save(any());
     }
 
     @Test
