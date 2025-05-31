@@ -54,7 +54,6 @@ import tools.PacketCreator;
 import tools.Randomizer;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -64,7 +63,7 @@ public final class TakeDamageHandler extends AbstractPacketHandler {
 
     @Override
     public void handlePacket(InPacket p, Client c) {
-        List<Character> banishPlayers = new ArrayList<>();
+        List<Character> banishPlayers = Collections.emptyList();
 
         Character chr = c.getPlayer();
         p.readInt();
@@ -164,7 +163,7 @@ public final class TakeDamageHandler extends AbstractPacketHandler {
                 Optional<MobSkillType> possibleType = MobSkillType.from(attackInfo.getDiseaseSkill());
                 Optional<MobSkill> possibleMobSkill = possibleType.map(type -> MobSkillFactory.getMobSkillOrThrow(type, attackInfo.getDiseaseLevel()));
                 if (possibleMobSkill.isPresent() && damage > 0) {
-                    possibleMobSkill.get().applyEffect(chr, attacker, false, banishPlayers);
+                    banishPlayers = possibleMobSkill.get().applyEffect(chr, attacker, false);
                 }
 
                 attacker.setMp(attacker.getMp() - attackInfo.getMpCon());

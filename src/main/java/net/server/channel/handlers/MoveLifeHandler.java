@@ -40,8 +40,8 @@ import tools.PacketCreator;
 import tools.exceptions.EmptyMovementException;
 
 import java.awt.*;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Collections;
 
 /**
  * @author Danny (Leifde)
@@ -68,7 +68,7 @@ public final class MoveLifeHandler extends AbstractMovementPacketHandler {
         }
 
         Monster monster = (Monster) mmo;
-        List<Character> banishPlayers = null;
+        List<Character> banishPlayers = Collections.emptyList();
 
         byte pNibbles = p.readByte();
         byte rawActivity = p.readByte();
@@ -100,8 +100,7 @@ public final class MoveLifeHandler extends AbstractMovementPacketHandler {
                     if (animationTime > 0 && toUse.getType() != MobSkillType.BANISH) {
                         toUse.applyDelayedEffect(player, monster, true, animationTime);
                     } else {
-                        banishPlayers = new LinkedList<>();
-                        toUse.applyEffect(player, monster, true, banishPlayers);
+                        banishPlayers = toUse.applyEffect(player, monster, true);
                     }
                 }
             }
@@ -171,10 +170,8 @@ public final class MoveLifeHandler extends AbstractMovementPacketHandler {
         } catch (EmptyMovementException e) {
         }
 
-        if (banishPlayers != null) {
-            for (Character chr : banishPlayers) {
-                chr.changeMapBanish(monster.getBanish());
-            }
+        for (Character chr : banishPlayers) {
+            chr.changeMapBanish(monster.getBanish());
         }
     }
 
