@@ -747,7 +747,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(2, accountid);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -785,7 +785,7 @@ public class Character extends AbstractCharacterObject {
             }
             return ret;
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            log.error("Exception", ex);
         }
         return false;
     }
@@ -1828,7 +1828,7 @@ public class Character extends AbstractCharacterObject {
                 ps.setInt(2, id);
                 ps.executeUpdate();
             } catch (SQLException ex) {
-                ex.printStackTrace();
+                log.error("Exception", ex);
             }
         }
     }
@@ -2173,7 +2173,7 @@ public class Character extends AbstractCharacterObject {
                 ps.executeUpdate();
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            log.error("Exception", ex);
         }
     }
 
@@ -2386,7 +2386,7 @@ public class Character extends AbstractCharacterObject {
             Server.getInstance().deleteCharacterEntry(accId, cid);
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
             return false;
         }
     }
@@ -2588,7 +2588,7 @@ public class Character extends AbstractCharacterObject {
         try {
             Server.getInstance().disbandGuild(guildid);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -3345,7 +3345,7 @@ public class Character extends AbstractCharacterObject {
                 }
             }
         } catch (SQLException sqle) {
-            sqle.printStackTrace();
+            log.error("Exception", sqle);
         }
 
         return character;
@@ -5068,7 +5068,7 @@ public class Character extends AbstractCharacterObject {
         try {
             return Server.getInstance().getGuild(getGuildId(), getWorld(), this);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            log.error("Exception", ex);
             return null;
         }
     }
@@ -5078,7 +5078,7 @@ public class Character extends AbstractCharacterObject {
             try {
                 return Server.getInstance().getAlliance(getGuild().getAllianceId());
             } catch (Exception ex) {
-                ex.printStackTrace();
+                log.error("Exception", ex);
             }
         }
 
@@ -5118,7 +5118,7 @@ public class Character extends AbstractCharacterObject {
             }
             return id;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return -1;
     }
@@ -5136,7 +5136,7 @@ public class Character extends AbstractCharacterObject {
             }
             return id;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return -1;
     }
@@ -5154,7 +5154,7 @@ public class Character extends AbstractCharacterObject {
             }
             return name;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return null;
     }
@@ -5334,7 +5334,7 @@ public class Character extends AbstractCharacterObject {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         if (elapsedDays > 100) {
@@ -6006,7 +6006,7 @@ public class Character extends AbstractCharacterObject {
                 Server.getInstance().allianceMessage(allianceId, GuildPackets.updateAllianceJobLevel(this), getId(), -1);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -6076,7 +6076,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(2, to.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -6778,7 +6778,7 @@ public class Character extends AbstractCharacterObject {
                 }
             }
         } catch (SQLException sqle) {
-            sqle.printStackTrace();
+            log.error("Exception", sqle);
         }
 
         return ret;
@@ -7347,7 +7347,7 @@ public class Character extends AbstractCharacterObject {
 
             return ret;
         } catch (SQLException | RuntimeException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return null;
     }
@@ -8003,7 +8003,7 @@ public class Character extends AbstractCharacterObject {
                     ps.executeBatch();
                 }
             } catch (SQLException se) {
-                se.printStackTrace();
+                log.error("Exception", se);
             }
         }
 
@@ -8028,7 +8028,7 @@ public class Character extends AbstractCharacterObject {
                     ps.executeBatch();
                 }
             } catch (SQLException se) {
-                se.printStackTrace();
+                log.error("Exception", se);
             }
         }
     }
@@ -8042,7 +8042,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(4, id);
             ps.executeUpdate();
         } catch (SQLException se) {
-            se.printStackTrace();
+            log.error("Exception", se);
         }
     }
 
@@ -8815,7 +8815,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(2, id);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         hasMerchant = set;
     }
@@ -8829,7 +8829,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(2, id);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
             return;
         }
         merchantmeso = newAmount;
@@ -8842,7 +8842,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(2, id);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
             return;
         }
         merchantmeso = set;
@@ -10070,7 +10070,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(4, accountid);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -10414,7 +10414,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(2, getId());
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -10641,7 +10641,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10651,7 +10651,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10660,7 +10660,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10670,7 +10670,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10680,7 +10680,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10690,7 +10690,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10700,7 +10700,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10710,7 +10710,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10720,7 +10720,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10730,7 +10730,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }
@@ -10740,7 +10740,7 @@ public class Character extends AbstractCharacterObject {
             ps.setString(2, oldName);
             ps.executeUpdate();
         } catch(SQLException e) { 
-            e.printStackTrace();
+            log.error("Exception", e);
             FilePrinter.printError(FilePrinter.CHANGE_CHARACTER_NAME, e, "Character ID : " + characterId);
             return false;
         }*/
@@ -10945,7 +10945,7 @@ public class Character extends AbstractCharacterObject {
             }
             return point;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return -1;
     }
@@ -10957,7 +10957,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(2, accountid);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -11130,7 +11130,7 @@ public class Character extends AbstractCharacterObject {
             ps.setInt(2, getClient().getAccID());
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 

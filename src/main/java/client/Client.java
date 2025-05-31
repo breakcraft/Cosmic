@@ -332,7 +332,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 chars.add(Character.loadCharFromDB(cni.id, this, false));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return chars;
     }
@@ -358,7 +358,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return chars;
     }
@@ -379,7 +379,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return ret;
     }
@@ -434,7 +434,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return ret;
@@ -468,7 +468,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return ret;
@@ -517,7 +517,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 ps.executeUpdate();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -552,7 +552,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -579,7 +579,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             ps.setInt(2, accId);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -612,7 +612,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             ps.setInt(2, accId);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -691,7 +691,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         if (loginok == 0 || loginok == 4) {
@@ -748,7 +748,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             tempBanCalendar = lTempban;
             return lTempban;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         return null;//why oh why!?!
@@ -784,7 +784,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             ps.setInt(2, accId);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -806,7 +806,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             ps.setInt(2, accId);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -833,7 +833,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             ps.setInt(3, getAccID());
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
 
         if (newState == LOGIN_NOTLOGGEDIN) {
@@ -887,7 +887,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             return state;
         } catch (SQLException e) {
             loggedIn = false;
-            e.printStackTrace();
+            log.error("Exception", e);
             throw new RuntimeException("login state");
         }
     }
@@ -1131,7 +1131,7 @@ public class Client extends ChannelInboundHandlerAdapter {
 
             return Character.deleteCharFromDB(chr, senderAccId);
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            log.error("Exception", ex);
             return false;
         }
     }
@@ -1173,7 +1173,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                     }
                 }
             } catch (NullPointerException e) {
-                e.printStackTrace();
+                log.error("Exception", e);
             }
         }, SECONDS.toMillis(15));
     }
@@ -1234,7 +1234,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 ps.executeUpdate();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return disconnect;
     }
@@ -1267,7 +1267,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         votePoints = points;
         return votePoints;
@@ -1295,7 +1295,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             ps.setInt(2, accId);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -1390,7 +1390,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 ps.executeUpdate();
 
             } catch (SQLException e) {
-                e.printStackTrace();
+                log.error("Exception", e);
             }
             return true;
         }
@@ -1408,7 +1408,7 @@ public class Client extends ChannelInboundHandlerAdapter {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
         return 0;
     }
@@ -1426,7 +1426,7 @@ public class Client extends ChannelInboundHandlerAdapter {
             ps.setInt(2, accId);
             ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 
@@ -1525,7 +1525,7 @@ public class Client extends ChannelInboundHandlerAdapter {
         try {
             sendPacket(PacketCreator.getChannelChange(InetAddress.getByName(socket[0]), Integer.parseInt(socket[1])));
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Exception", e);
         }
     }
 

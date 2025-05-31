@@ -728,7 +728,7 @@ public class World {
             ps.setInt(3, cid);
             ps.executeUpdate();
         } catch (SQLException se) {
-            se.printStackTrace();
+            log.error("Exception", se);
         }
     }
 
@@ -1892,7 +1892,7 @@ public class World {
                     executePlayerNpcMapDataUpdate(con, true, pnpcPodium, podium, id, mapid);
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                log.error("Exception", e);
             }
         }
 
@@ -2027,7 +2027,7 @@ public class World {
 
             return (mid == null) ? null : new Pair<>(mid, new Pair<>(hid, wid));
         } catch (SQLException se) {
-            se.printStackTrace();
+            log.error("Exception", se);
             return null;
         }
     }
@@ -2052,7 +2052,7 @@ public class World {
                 return ret;
             }
         } catch (SQLException se) {
-            se.printStackTrace();
+            log.error("Exception", se);
             return -1;
         }
     }
@@ -2072,7 +2072,7 @@ public class World {
             ps.setInt(1, playerId);
             ps.executeUpdate();
         } catch (SQLException se) {
-            se.printStackTrace();
+            log.error("Exception", se);
         }
     }
 
