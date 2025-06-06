@@ -215,7 +215,6 @@ server:
     USE_IP_VALIDATION: false             #Enables IP checking when logging in.
     USE_CHARACTER_ACCOUNT_CHECK: false  #Enables one-character-per-account check when logging in. This might be resource intensive.
 
-    USE_MAXRANGE: true                  #Will send and receive packets from all events on a map, rather than those of only view range.
     USE_MAXRANGE_ECHO_OF_HERO: true
     USE_MTS: false
     USE_CPQ: true                       #Renders the CPQ available or not.

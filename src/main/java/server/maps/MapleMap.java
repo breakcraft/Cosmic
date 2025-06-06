@@ -251,7 +251,7 @@ public class MapleMap {
     }
 
     private static double getRangedDistance() {
-        return YamlConfig.config.server.USE_MAXRANGE ? Double.POSITIVE_INFINITY : 722500;
+        return Double.POSITIVE_INFINITY;
     }
 
     public List<MapObject> getMapObjectsInRect(Rectangle box, List<MapObjectType> types) {
@@ -2789,15 +2789,7 @@ public class MapleMap {
         try {
             for (Character chr : characters) {
                 Packet packet = PacketCreator.dropItemFromMapObject(chr, mdrop, dropperPos, dropPos, mod, delay);
-
-                // TODO: remove along with USE_MAXRANGE config
-                if (rangeSq < Double.POSITIVE_INFINITY) {
-                    if (rangedFrom.distanceSq(chr.getPosition()) <= rangeSq) {
-                        chr.sendPacket(packet);
-                    }
-                } else {
-                    chr.sendPacket(packet);
-                }
+                chr.sendPacket(packet);
             }
         } finally {
             chrRLock.unlock();
@@ -3313,54 +3305,6 @@ public class MapleMap {
         }
 
         return false;
-    }
-
-    // TODO: no reason to implement runnable - this is not intended to be submitted to another thread
-    private class MobLootEntry implements Runnable {
-
-        private final byte droptype;
-        private final int mobpos;
-        private final int chRate;
-        private final Point pos;
-        private final short delay;
-        private final List<MonsterDropEntry> dropEntry;
-        private final List<MonsterDropEntry> visibleQuestEntry;
-        private final List<MonsterDropEntry> otherQuestEntry;
-        private final List<MonsterGlobalDropEntry> globalEntry;
-        private final Character chr;
-        private final Monster mob;
-
-        protected MobLootEntry(byte droptype, int mobpos, int chRate, Point pos, short delay,
-                               List<MonsterDropEntry> dropEntry, List<MonsterDropEntry> visibleQuestEntry,
-                               List<MonsterDropEntry> otherQuestEntry, List<MonsterGlobalDropEntry> globalEntry,
-                               Character chr, Monster mob) {
-            this.droptype = droptype;
-            this.mobpos = mobpos;
-            this.chRate = chRate;
-            this.pos = pos;
-            this.delay = delay;
-            this.dropEntry = dropEntry;
-            this.visibleQuestEntry = visibleQuestEntry;
-            this.otherQuestEntry = otherQuestEntry;
-            this.globalEntry = globalEntry;
-            this.chr = chr;
-            this.mob = mob;
-        }
-
-        @Override
-        public void run() {
-            byte d = 1;
-
-            // Normal Drops
-            d = dropItemsFromMonsterOnMap(dropEntry, pos, d, chRate, droptype, mobpos, chr, mob, delay);
-
-            // Global Drops
-            d = dropGlobalItemsFromMonsterOnMap(globalEntry, pos, d, droptype, mobpos, chr, mob, delay);
-
-            // Quest Drops
-            d = dropItemsFromMonsterOnMap(visibleQuestEntry, pos, d, chRate, droptype, mobpos, chr, mob, delay);
-            dropItemsFromMonsterOnMap(otherQuestEntry, pos, d, chRate, droptype, mobpos, chr, mob, delay);
-        }
     }
 
     private class ActivateItemReactor implements Runnable {
