@@ -251,7 +251,7 @@ public class MapleMap {
     }
 
     private static double getRangedDistance() {
-        return YamlConfig.config.server.USE_MAXRANGE ? Double.POSITIVE_INFINITY : 722500;
+        return Double.POSITIVE_INFINITY;
     }
 
     public List<MapObject> getMapObjectsInRect(Rectangle box, List<MapObjectType> types) {
@@ -2789,15 +2789,7 @@ public class MapleMap {
         try {
             for (Character chr : characters) {
                 Packet packet = PacketCreator.dropItemFromMapObject(chr, mdrop, dropperPos, dropPos, mod, delay);
-
-                // TODO: remove along with USE_MAXRANGE config
-                if (rangeSq < Double.POSITIVE_INFINITY) {
-                    if (rangedFrom.distanceSq(chr.getPosition()) <= rangeSq) {
-                        chr.sendPacket(packet);
-                    }
-                } else {
-                    chr.sendPacket(packet);
-                }
+                chr.sendPacket(packet);
             }
         } finally {
             chrRLock.unlock();
