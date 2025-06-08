@@ -14,6 +14,7 @@ var staff_heading = "!";
 var levels = ["Common", "Donator", "JrGM", "GM", "SuperGM", "Developer", "Admin"];
 var commands;
 
+var lvComm, lvDesc, lvHead, selectedLevel;
 function writeHeavenMSCommands() {
     const CommandsExecutor = Java.type('client.command.CommandsExecutor');
     commands = CommandsExecutor.getInstance().getGmCommands();
@@ -47,13 +48,14 @@ function action(mode, type, selection) {
 
             cm.sendSimple(sendStr);
         } else if (status == 1) {
-            var lvComm, lvDesc, lvHead = (selection < 2) ? common_heading : staff_heading;
+            lvHead = (selection < 2) ? common_heading : staff_heading;
 
             if (selection > 6) {
                 selection = 6;
             } else if (selection < 0) {
                 selection = 0;
             }
+            selectedLevel = selection;
 
             lvComm = commands.get(selection).getLeft();
             lvDesc = commands.get(selection).getRight();
@@ -64,7 +66,12 @@ function action(mode, type, selection) {
                 sendStr += "#l\r\n";
             }
 
-            cm.sendPrev(sendStr);
+            cm.sendSimple(sendStr);
+        } else if (status == 2) {
+            if (selection >= 0 && selection < lvComm.size()) {
+                cm.sendOk("#b" + lvHead + lvComm.get(selection) + "#k - " + lvDesc.get(selection));
+            }
+            cm.dispose();
         } else {
             cm.dispose();
         }
