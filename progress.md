@@ -27,3 +27,4 @@
 - feat: start.sh checks java
 - docs: recommend apt upgrade
 - config: document server port
+- tools: add java version script
