@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fancy Todo List</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,9 +17,13 @@
             <button data-filter="all" class="active">All</button>
             <button data-filter="active">Active</button>
             <button data-filter="completed">Completed</button>
+            <button id="clear-completed">Clear Completed</button>
+            <button id="toggle-all">Toggle All</button>
         </div>
         <ul id="todo-list"></ul>
+        <div id="todo-count"></div>
     </div>
     <script src="main.js"></script>
 </body>
 </html>
+
