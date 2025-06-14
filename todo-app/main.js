@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filters = document.querySelectorAll('.filters button');
 
     let todos = JSON.parse(localStorage.getItem('todos') || '[]');
-    let currentFilter = 'all';
+    let currentFilter = localStorage.getItem('filter') || 'all';
 
     const save = () => {
         localStorage.setItem('todos', JSON.stringify(todos));
@@ -62,10 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     filters.forEach(btn => {
+        if (btn.dataset.filter === currentFilter) {
+            btn.classList.add('active');
+        }
         btn.addEventListener('click', () => {
             filters.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentFilter = btn.dataset.filter;
+            localStorage.setItem('filter', currentFilter);
             render();
         });
     });
