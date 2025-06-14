@@ -29,3 +29,4 @@ scripts/*.log
 .DS_Store
 jwzlib/
 *.log
+node_modules/
