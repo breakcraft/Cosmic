@@ -132,6 +132,7 @@ as the Maven dependencies have been downloaded once. Use the wrapper with the
 ```bash
 ./mvnw -o -DskipTests package
 ```
+You can also run the helper script `./build-offline.sh` which wraps the above command.
 See [docs/maven_network_debug.md](docs/maven_network_debug.md) for troubleshooting tips.
 
 ### 3 - Client
