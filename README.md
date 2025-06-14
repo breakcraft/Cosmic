@@ -3,7 +3,7 @@ Cosmic is a server emulator for Global MapleStory (GMS) version 83.
 
 ## Introduction
 
-Cosmic launched on March 2021. It is based on code from a long line of server emulators spanning over a decade - starting with OdinMS (2008) and ending with HeavenMS (2019).
+Cosmic launched in March 2021. It is based on code from a long line of server emulators spanning over a decade - starting with OdinMS (2008) and ending with HeavenMS (2019).
 
 This is mainly a Java based project, but there are also a bunch of scripts written in JavaScript.
 
