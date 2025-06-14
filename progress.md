@@ -41,3 +41,4 @@
 - tools: list_todos accepts paths
 - tools: script lister
 - chore: add clean script
+- chore: newline at EOF
