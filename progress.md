@@ -25,3 +25,4 @@
 - docs: mention handbook script
 - feat: start.sh prints status
 - feat: start.sh checks java
+- docs: recommend apt upgrade

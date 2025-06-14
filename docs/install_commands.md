@@ -5,6 +5,7 @@ The following commands install the software required to build and run Cosmic on 
 ```bash
 # Update package lists
 sudo apt-get update
+sudo apt-get upgrade -y
 sudo apt-get install -y apt-utils
 
 # Install Java 21
