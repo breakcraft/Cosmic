@@ -105,6 +105,8 @@ To build the server and start it right away:
 ./build.sh
 java -jar target/Cosmic-*.jar -Dwz-path=/path/to/wz
 ```
+### Todo demo
+A small web-based todo list lives in `todo-app`. Run `scripts/run-todo-server.sh` and open <http://localhost:8000> to try it.
 
 ### 3 - Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.
