@@ -1,5 +1,6 @@
 #!/bin/sh
 # Run all SQL setup scripts against MySQL
+# Requires `apt-utils` for noninteractive installs on Debian/Ubuntu
 set -e
 if [ -z "$1" ]; then
   echo "Usage: $0 <mysql-root-password>"
