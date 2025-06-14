@@ -7,4 +7,4 @@ if [ ! -f "$DIR/target/Cosmic.jar" ]; then
     "$DIR/mvnw" -DskipTests package || exit 1
 fi
 
-java -jar "$DIR/target/Cosmic.jar" "$@"
+exec java -jar "$DIR/target/Cosmic.jar" "$@"
