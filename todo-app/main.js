@@ -102,5 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         save();
         render();
     });
+    input.focus();
     render();
 });
