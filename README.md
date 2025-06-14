@@ -17,7 +17,7 @@ What we are working towards.
 * __Vanilla gameplay__ - stay as close to the original game as possible (within reason).
 * __Ease of use__ - getting started should be frictionless and contributing to the project straightforward.
 * __Reduce technical debt__ - making changes should be easy without causing unintended side effects.
-* __Modern tools & technologies__ - stay appealing by continuously improving the code and the project as a whole. 
+* __Modern tools & technologies__ - stay appealing by continuously improving the code and the project as a whole.
 
 ### Non-goals
 Explicitly excluded from the scope of the project.
@@ -29,7 +29,7 @@ Explicitly excluded from the scope of the project.
 
 ### Contribute
 You may contribute to the project in various ways, mainly through GitHub:
-* Providing improvements to the code through a [Pull Request](https://github.com/P0nk/Cosmic/pulls) from your own fork. 
+* Providing improvements to the code through a [Pull Request](https://github.com/P0nk/Cosmic/pulls) from your own fork.
 * Reporting a bug by creating an [Issue](https://github.com/P0nk/Cosmic/issues).
 * Providing information to existing issues or reviewing pull requests that others have made.
 * ...and in other ways that I haven't thought of!
@@ -56,7 +56,7 @@ We will set up the following:
 - Server - the server is the "brain" and routes network traffic between the clients.
 - Client - the client is the application used to _play the game_, i.e. MapleStory.exe.
 
-### 1 - Database 
+### 1 - Database
 You will start by installing the database server and client, and then run some scripts to prepare it for the server.
 
 #### Steps
@@ -122,18 +122,18 @@ You will start by installing the game with the old installer, then overwrite som
 3. Delete the following files from the installation directory: _HShield_ (entire directory), _ASPLnchr.exe_, _MapleStory.exe_, and _Patcher.exe_.
 4. Download _CosmicWZ-2024-07-17-v0.14.0.zip_ from my [Google Drive](https://drive.google.com/drive/folders/1hgnb92MGL6xqEp9szEMBh0K9pSJcJ6IT).
 5. Unzip it and copy all .wz-files into the installation directory. Replace the existing ones.
-6. Download _HeavenMS-localhost-WINDOW.exe_ from [hostr.co](https://hostr.co/amuX5SLeeVZx). This is a client modified to connect to your localhost instead of Nexon's server (along with some fixes and custom changes). 
-   - Your antivirus will likely detect the file as a trojan or similar and automatically delete it. To prevent this from happening, add your _Downloads_ directory and the installation directory as exclusions in your antivirus software. On W11, this is under "Virus & threat protection settings" -> "Add or remove exclusions". 
+6. Download _HeavenMS-localhost-WINDOW.exe_ from [hostr.co](https://hostr.co/amuX5SLeeVZx). This is a client modified to connect to your localhost instead of Nexon's server (along with some fixes and custom changes).
+   - Your antivirus will likely detect the file as a trojan or similar and automatically delete it. To prevent this from happening, add your _Downloads_ directory and the installation directory as exclusions in your antivirus software. On W11, this is under "Virus & threat protection settings" -> "Add or remove exclusions".
 7. Move _HeavenMS-localhost-WINDOW.exe_ into the installation directory.
 8. Done! Double-click the exe and the game should start.
    - The client may be a bit fiddly. Sometimes it won't start, but if you see "Client connected" in the server console it's a good indication. Try spam-clicking it like 10+ times, that usually works for me.
 
 **Important note about localhost clients**: these executables are red-flagged by antivirus tools as potentially malicious software.
-This happens due to the reverse engineering methods that were applied onto these software artifacts. 
+This happens due to the reverse engineering methods that were applied onto these software artifacts.
 The one provided here has been in use for years already and posed no harm so far, so it is assumed to be safe.
 
 ### 4 - Getting into the game
-The client has started, and you're looking at the login screen. 
+The client has started, and you're looking at the login screen.
 
 #### Logging in
 At this point, you can log in to the admin account using the following credentials:
@@ -151,7 +151,7 @@ If you log in to the "Admin" character, you'll notice that the character looks a
 
 Hide is one of many commands available to players, type "@commands" to see the full list. Higher ranked GMs have access to more powerful commands.
 
-That's it, have fun playing around in game! 
+That's it, have fun playing around in game!
 
 ## Advanced concepts
 Some slightly more advanced concepts that might be useful once you're up and running.
@@ -171,7 +171,7 @@ I leave it to you to figure out the server hosting part, but once you have that 
 ### WZ files
 WZ files are the asset/data files required by the client and server. Typically, [HaRepacker-resurrected](https://github.com/lastbattle/Harepacker-resurrected) is used to handle (view, edit, export) the .wz files.
 
-The client can read the .wz files directly, but the server requires them in XML format. The server also does not make use of the sprites, which is the motivation for different kinds of exporting. 
+The client can read the .wz files directly, but the server requires them in XML format. The server also does not make use of the sprites, which is the motivation for different kinds of exporting.
 HaRepacker allows you to export to "Private server", which is the .img files packaged in the .wz stripped of sprites and converted to XML. This takes much less disk space.
 
 This server requires custom .wz files (unfortunately), as you may have noted during installation of the client. The intention is for these to be removed eventually and to solely run on vanilla .wz files.
@@ -182,7 +182,7 @@ This server requires custom .wz files (unfortunately), as you may have noted dur
 * Save the changed .wz, overwriting the original content at the client folder.
 * Finally, re-export (using the "Private Server" exporting option) the changed XMLs into the server's .wz XML files (found in the "wz" directory), overwriting the old contents.
 
-Make sure to always export from the client .wz files to the server XML, and not the other way around. 
+Make sure to always export from the client .wz files to the server XML, and not the other way around.
 
 Editing the client .wz without exporting to the server may lead to strange behavior.
 
