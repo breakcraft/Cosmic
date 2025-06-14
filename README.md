@@ -13,6 +13,7 @@ Contributors: a lot of people over the years, and hopefully more to come. Big th
 Join the Discord server where most of the discussions take place: https://discord.gg/JU5aQapVZK
 ### Quickstart
 To quickly run the unit tests, execute `tools/scripts/run-tests.sh`.
+Handbook reference files can be listed with `tools/scripts/list_handbook.sh`.
 
 
 ### Goals

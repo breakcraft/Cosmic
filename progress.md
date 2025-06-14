@@ -22,3 +22,4 @@
 - tools: add handbook listing script
 - chore: ignore vscode folder
 - docs: add script overview
+- docs: mention handbook script
