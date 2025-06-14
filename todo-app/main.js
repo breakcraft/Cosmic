@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Enter') {
             e.preventDefault();
             form.dispatchEvent(new Event('submit'));
+        } else if (e.key === 'Escape') {
+            input.value = '';
         }
     });
 

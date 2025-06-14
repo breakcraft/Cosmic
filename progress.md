@@ -33,3 +33,4 @@
 - docs: document demo todo server
 - tools: add shell path helper
 - tools: show progress helper
+- todo-app: clear input on escape
