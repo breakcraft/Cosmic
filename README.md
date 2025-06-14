@@ -73,6 +73,7 @@ You will start by cloning the repository, then configure the database properties
 #### Prerequisites
 * Java 21 (I recommend [Amazon Corretto](https://aws.amazon.com/corretto))
 * IDE (I recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/))
+* Run `sudo apt-get update && sudo apt-get install -y apt-utils` on Debian/Ubuntu systems
 
 #### Steps
 
@@ -188,3 +189,5 @@ For more information about the client and its features, see [HeavenMS on GitHub]
 Some notable features:
 * Opens in window mode by default
 * Uncapped max speed
+* Expanded resolution options
+
