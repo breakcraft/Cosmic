@@ -66,6 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            form.dispatchEvent(new Event('submit'));
+        }
+    });
+
     filters.forEach(btn => {
         if (btn.dataset.filter === currentFilter) {
             btn.classList.add('active');
