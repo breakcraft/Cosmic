@@ -5,9 +5,6 @@ The following commands install the software required to build and run Cosmic on 
 ```bash
 # Update package lists
 sudo apt-get update
-# Install apt-utils
-sudo apt-get install -y apt-utils
-
 # Install apt-utils for noninteractive package management
 sudo apt-get install -y apt-utils
 
