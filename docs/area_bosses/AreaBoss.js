@@ -1,4 +1,5 @@
 // @Author: Resinate
+// Automatically spawns area bosses on a schedule
 
 importPackage(Packages.server.life);
 importPackage(Packages.tools);
