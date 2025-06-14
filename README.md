@@ -104,6 +104,7 @@ To run the jar, a ``launch.bat`` file is provided for convenience. Simply double
 
 Alternatively, run the jar file from the terminal. Just remember to provide the `wz-path` system property pointing to your wz directory.
 
+<<<<<<< HEAD
 ### Quick build & run
 To build the server and start it right away:
 ```bash
@@ -134,6 +135,7 @@ as the Maven dependencies have been downloaded once. Use the wrapper with the
 ./mvnw -o -DskipTests package
 ```
 You can also run the helper script `./build-offline.sh` which wraps the above command.
+Alternatively execute `build-support/offline-maven.sh` from anywhere to build offline.
 See [docs/maven_network_debug.md](docs/maven_network_debug.md) for troubleshooting tips.
 
 ### 3 - Client
