@@ -107,6 +107,13 @@ To build the server and start it right away:
 java -jar target/Cosmic-*.jar -Dwz-path=/path/to/wz
 ```
 
+You can also use the provided `start.sh` script which builds the jar if needed
+and then launches the server:
+
+```bash
+./start.sh -Dwz-path=/path/to/wz
+```
+
 ### 3 - Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.
 
