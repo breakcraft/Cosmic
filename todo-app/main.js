@@ -40,6 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     save();
                     render();
                 };
+                const edit = document.createElement('button');
+                edit.textContent = '✎';
+                edit.onclick = () => {
+                    const newText = prompt('Edit task', todos[idx].text);
+                    if (newText !== null && newText.trim() !== '') {
+                        todos[idx].text = newText.trim();
+                        save();
+                        render();
+                    }
+                };
                 const del = document.createElement('button');
                 del.textContent = '✖';
                 del.onclick = () => {
@@ -48,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     render();
                 };
                 li.appendChild(span);
+                li.appendChild(edit);
                 li.appendChild(del);
                 list.appendChild(li);
             });
