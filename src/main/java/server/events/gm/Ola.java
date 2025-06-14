@@ -24,6 +24,7 @@ package server.events.gm;
 import client.Character;
 import constants.id.MapId;
 import server.TimerManager;
+import server.maps.MapleMap;
 import tools.PacketCreator;
 
 import java.util.concurrent.ScheduledFuture;
@@ -47,13 +48,15 @@ public class Ola {
         }, 360000);
     }
 
-    public void startOla() { // TODO: Messages
-        chr.getMap().startEvent();
+    public void startOla() {
+        MapleMap map = chr.getMap();
+        map.startEvent();
         chr.sendPacket(PacketCreator.getClock(360));
         this.timeStarted = System.currentTimeMillis();
         this.time = 360000;
 
-        chr.getMap().getPortal("join00").setPortalStatus(true);
+        map.getPortal("join00").setPortalStatus(true);
+        map.broadcastMessage(PacketCreator.serverNotice(5, chr.getName() + " has started Ola Ola!"));
         chr.sendPacket(PacketCreator.serverNotice(0, "The portal has now opened. Press the up arrow key at the portal to enter."));
     }
 
