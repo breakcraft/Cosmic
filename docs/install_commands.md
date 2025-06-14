@@ -34,6 +34,7 @@ After installing these packages you can build the jar and prepare the database:
 ./build.sh
 
 # Run the SQL scripts (you will be prompted for the root password)
+# Alternatively, use scripts/setup_db.sh <password>
 mysql -u root -p < database/sql/1-db_database.sql
 mysql -u root -p < database/sql/2-db_drops.sql
 mysql -u root -p < database/sql/3-db_shopupdate.sql
