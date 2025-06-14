@@ -114,9 +114,14 @@ Run the automated tests with:
 ```bash
 ./run-tests.sh
 ```
-
 You can also use the provided `start.sh` script which builds the jar if needed
 and then launches the server:
+
+```bash
+./start.sh -Dwz-path=/path/to/wz
+```
+
+
 
 ##### Building without network access
 If you are working in an offline environment you can still compile Cosmic as long
@@ -129,7 +134,6 @@ You can also run the helper script `./build-offline.sh` which wraps the above co
 See [docs/maven_network_debug.md](docs/maven_network_debug.md) for troubleshooting tips.
 
 
-### 3 - Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.
 
 #### Steps
