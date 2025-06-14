@@ -4,3 +4,5 @@
 - fix: removed USE_MAXRANGE config and simplified item drop broadcasts
 - docs: added helper script
 - docs: clarify apt-utils prerequisite and offline build helper
+- docs: sanitized stray prompts
+
