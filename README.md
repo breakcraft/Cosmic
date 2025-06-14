@@ -193,3 +193,8 @@ Some notable features:
 * Uncapped max speed
 * Expanded resolution options
 
+
+### Utility scripts
+* `tools/scripts/run-tests.sh` - run the Maven test suite.
+* `tools/scripts/unzip_here.sh` - extract a zip archive in-place.
+* `tools/scripts/todo_count.sh` - count TODO markers in the code.
