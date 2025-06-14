@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 # Simple helper script to build and run the server
 DIR="$(dirname "$0")"
 
