@@ -3,3 +3,4 @@
 # Treat specific file types as binary
 *.jar binary
 *.png binary
+*.sh text eol=lf
