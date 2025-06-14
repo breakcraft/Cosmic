@@ -74,7 +74,7 @@
   </imgdir>
   <imgdir name="5010018">
     <string name="name" value="Smile"/>
-    <string name="desc" value="A smile effect best used when you&apos;re in a great mood! Designate a a HotKey to turn the effect ON/OFF."/>
+    <string name="desc" value="A smile effect best used when you&apos;re in a great mood! Designate a HotKey to turn the effect ON/OFF."/>
   </imgdir>
   <imgdir name="5010019">
     <string name="name" value="Heart"/>
