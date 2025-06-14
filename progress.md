@@ -10,3 +10,4 @@
 - docs: remove trailing whitespace from README
 - todo-app: added remaining count display and clear completed button
 - docs: remove duplicate container start description
+- tools: added clean_target script and improved docs
