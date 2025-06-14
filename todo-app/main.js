@@ -17,9 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const render = () => {
         list.innerHTML = '';
-        todos
+        const visible = todos
             .filter(t => currentFilter === 'all' || (currentFilter === 'active' && !t.done) || (currentFilter === 'completed' && t.done))
-            .forEach((t, idx) => {
+        if (visible.length === 0) {
+            const empty = document.createElement('li');
+            empty.textContent = 'No tasks';
+            empty.classList.add('empty');
+            list.appendChild(empty);
+        } else {
+            visible.forEach((t, idx) => {
                 const li = document.createElement('li');
                 if (t.done) li.classList.add('completed');
                 const span = document.createElement('span');
@@ -51,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.appendChild(del);
                 list.appendChild(li);
             });
+        }
         const remaining = todos.filter(t => !t.done).length;
         counter.textContent = `${remaining} item${remaining === 1 ? '' : 's'} left`;
     };
