@@ -123,7 +123,7 @@ function action(mode, type, selection) {
             cm.dispose();
         } else if (choice == 4) {
             if (cm.getPlayer().getGuild() == null || cm.getPlayer().getGuild().getAllianceId() <= 0) {
-                cm.sendNext("You cannot disband a non-existant Guild Union.");
+                cm.sendNext("You cannot disband a non-existent Guild Union.");
                 cm.dispose();
             } else {
                 cm.disbandAlliance(cm.getClient(), cm.getPlayer().getGuild().getAllianceId());

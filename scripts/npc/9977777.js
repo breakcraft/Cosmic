@@ -96,7 +96,7 @@ function writeFeatureTab_PlayerSocialNetwork() {
     addFeature("Automated support for Player NPCs and Hall of Fame.");
     addFeature("Engagement & Wedding system with ring effects.");
     addFeature("Wedding Wishlists - thanks Dragohe4rt!");
-    addFeature("Equipments displays to everyone it's level & EXP info.");
+    addFeature("Equipment displays to everyone its level & EXP info.");
     addFeature("Further improved the existent minigame mechanics.");
     addFeature("Trade complete using handshake synchronization.");
     addFeature("GMS-like trade results displaying after transactions.");
@@ -245,12 +245,12 @@ function writeFeatureTab_Commands() {
 }
 
 function writeFeatureTab_CustomNPCs() {
-    addFeature("Spiegelmann: automatized rock-refiner.");
+    addFeature("Spiegelmann: automated rock-refiner.");
     addFeature("Asia: scroll & rarities shop NPC.");
     addFeature("Abdula: lists droppers of needed skill/mastery books.");
     addFeature("Agent E: accessory crafter.");
-    addFeature("Dalair: automatized equipment-merger.");
-    addFeature("Donation Box: automatized item-buyer.");
+    addFeature("Dalair: automated equipment-merger.");
+    addFeature("Donation Box: automated item-buyer.");
     addFeature("Coco & Ace of Hearts: C. scroll crafters.");
     addFeature("Barry (MapleTV): fill book & exchange items for scroll.");
 }

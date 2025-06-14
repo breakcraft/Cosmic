@@ -188,7 +188,7 @@ server:
     BCRYPT_MIGRATION: true          #Performs a migration from old SHA-1 and SHA-512 password to bcrypt.
     COLLECTIVE_CHARSLOT: false      #Available character slots are contabilized globally rather than per world server.
     DETERRED_MULTICLIENT: false     #Enables detection of multi-client and suspicious remote IP on the login system.
-    #Besides blocking logging in with several client sessions on the same machine, this also blocks suspicious login attempts for players that tries to login on an account using several diferent remote addresses.
+    #Besides blocking logging in with several client sessions on the same machine, this also blocks suspicious login attempts for players that try to log in on an account using several different remote addresses.
 
     #Multiclient Coordinator Configuration
     MAX_ALLOWED_ACCOUNT_HWID: 10        #Allows up to N concurrent HWID's for an account. HWID's remains linked to an account longer the more times it's used to login.
@@ -234,7 +234,7 @@ server:
     USE_AUTOBAN_LOG: true               #Log autoban related messages. Still logs even with USE_AUTOBAN disabled.
     USE_EXP_GAIN_LOG: false #Logs characters exp gains; logs world rate & coupon exp, total gained exp, and current exp, level can be calculated from "ExpTable".
     USE_AUTOSAVE: true                  #Enables server autosaving feature (saves characters to DB each 1 hour).
-    USE_SERVER_AUTOASSIGNER: false       #HeavenMS-builtin autoassigner, uses algorithm based on distributing AP accordingly with required secondary stat on equipments.
+    USE_SERVER_AUTOASSIGNER: false       #HeavenMS-builtin autoassigner, uses algorithm based on distributing AP according to the required secondary stat on equipment.
     USE_REFRESH_RANK_MOVE: true
     USE_ENFORCE_ADMIN_ACCOUNT: false    #Forces accounts having GM characters to be treated as a "GM account" by the client (localhost). Some of the GM account perks is the ability to FLY, but unable to TRADE.
     USE_ENFORCE_NOVICE_EXPRATE: false    #Hardsets experience rate 1x for beginners level 10 or under. Ideal for roaming on novice areas without caring too much about losing some stats.
@@ -269,7 +269,7 @@ server:
 
     #Announcement Configuration
     USE_ANNOUNCE_SHOPITEMSOLD: false    #Automatic message sent to owner when an item from the Player Shop or Hired Merchant is sold.
-    USE_ANNOUNCE_CHANGEJOB: false       #Automatic message sent to acquantainces when changing jobs.
+    USE_ANNOUNCE_CHANGEJOB: false       #Automatic message sent to acquaintances when changing jobs.
     USE_ANNOUNCE_NX_COUPON_LOOT: false    #Enables or disables the floating text when a player loots a NX card
 
     #Cash Shop Configuration
@@ -312,7 +312,7 @@ server:
     MOB_REACTOR_REFRESH_TIME: 0         # (30 * 1000) Overwrites refresh time for those reactors oriented to inflict damage to bosses (Ice Queen, Riche), set 0 for default.
     PARTY_SEARCH_REENTRY_LIMIT: 10              #Max amount of times a party leader is allowed to persist on the Party Search before entry expiration (thus needing to manually restart the Party Search to be able to search for members).
     NAME_CHANGE_COOLDOWN: 2592000000      # (30*24*60*60*1000) Cooldown for name changes, default (GMS) is 30 days.
-    WORLD_TRANSFER_COOLDOWN: 2592000000  # (30*24*60*60*1000) Cooldown for world tranfers, default is same as name change (30 days).
+    WORLD_TRANSFER_COOLDOWN: 2592000000  # (30*24*60*60*1000) Cooldown for world transfers, default is the same as name change (30 days).
     INSTANT_NAME_CHANGE: false              #Whether or not to wait for server restart to apply name changes. Does on reconnect otherwise (requires queries on every login).
 
     #Dangling Items/Locks Configuration
@@ -325,7 +325,7 @@ server:
     ITEM_EXPIRE_CHECK: 10000        # (10 * 10000) Interval between item expiring tasks on maps, which checks and makes disappear expired items.
     ITEM_LIMIT_ON_MAP: 200              #Max number of items allowed on a map.
     MAP_VISITED_SIZE: 5                 #Max length for last mapids visited by a player. This is used to recover and update drops on these maps accordingly with player actions.
-    MAP_DAMAGE_OVERTIME_INTERVAL: 2500  #Interval in milliseconds between map environment damage (e.g. El Nath and Aqua Road surrondings).
+    MAP_DAMAGE_OVERTIME_INTERVAL: 2500  #Interval in milliseconds between map environment damage (e.g. El Nath and Aqua Road surroundings).
     MAP_DAMAGE_OVERTIME_COUNT: 2
 
     #Channel Mob Disease Monitor Configuration
@@ -389,7 +389,7 @@ server:
     #Equipment Configuration
     USE_EQUIPMNT_LVLUP_SLOTS: false  #Equips can upgrade slots at level up.
     USE_EQUIPMNT_LVLUP_POWER: false  #Enable more powerful stat upgrades at equip level up.
-    USE_EQUIPMNT_LVLUP_CASH: false   #Enable equip leveling up on cash equipments as well.
+    USE_EQUIPMNT_LVLUP_CASH: false   #Enable equip leveling up on cash equipment as well.
     MAX_EQUIPMNT_LVLUP_STAT_UP: 10000   #Max stat upgrade an equipment can have on a levelup.
     MAX_EQUIPMNT_STAT: 32767            #Max stat on an equipment by leveling up.
     USE_EQUIPMNT_LVLUP: 1               #All equips lvlup at max level of N, set 1 to disable.

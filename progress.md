@@ -7,3 +7,4 @@
 - docs: fixed install_commands formatting
 - todo-app: clear completed tasks, persistent filter, edit tasks
 - docs: sanitized stray prompts
+- chore: fix typos across NPC scripts

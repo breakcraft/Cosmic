@@ -269,7 +269,7 @@ function action(mode, type, selection) {
                     cm.dispose();
 
                 } else if (selection == 4) {
-                    var selStr = "Very well, instead I offer a steadfast #bore refining#k service for you, taxing #r" + ((feeMultiplier * 100) | 0) + "%#k over the usual fee to synthetize them. What will you do?#b";
+                    var selStr = "Very well, instead I offer a steadfast #b ore refining#k service for you, taxing #r" + ((feeMultiplier * 100) | 0) + "%#k over the usual fee to synthesize them. What will you do?#b";
 
                     var options = ["Refine mineral ores", "Refine jewel ores"];
                     if (refineCrystals) {
@@ -460,7 +460,7 @@ function action(mode, type, selection) {
                 if (allDone) {
                     cm.sendOk("Done. Thanks for showing up~.");
                 } else {
-                    cm.sendOk("Done. Be aware some of the items #rcould not be synthetized#k because either you have a lack of space on your ETC inventory or there's not enough mesos to cover the fee.");
+                    cm.sendOk("Done. Be aware some of the items #rcould not be synthesized#k because either you have a lack of space in your ETC inventory or there's not enough mesos to cover the fee.");
                 }
                 cm.dispose();
             }
