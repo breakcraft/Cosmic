@@ -120,6 +120,15 @@ You can also use the provided `start.sh` script which builds the jar if needed a
 ```bash
 ./start.sh -Dwz-path=/path/to/wz
 ```
+##### Building without network access
+If you are working in an offline environment you can still compile Cosmic as long
+as the Maven dependencies have been downloaded once. Use the wrapper with the
+`-o` flag which enables offline mode:
+
+```bash
+./mvnw -o -DskipTests package
+```
+See [docs/maven_network_debug.md](docs/maven_network_debug.md) for troubleshooting tips.
 
 ### Todo demo
 A small web-based todo list lives in `todo-app`. Run `scripts/run-todo-server.sh` and open <http://localhost:8000> to try it.
