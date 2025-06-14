@@ -62,7 +62,7 @@ function end(mode, type, selection) {
                 qm.sendNext("You are now no longer a Knight-in-Training. You have now officially become a Cygnus Knight.");
             }
         } else if (status == 2) {
-            qm.sendNextPrev("I have also given you some #bSP#k and the accompanying skills of a Thunder Breakers that are only available to the official knights. These skills are lightning-based, so use them wisely!");
+            qm.sendNextPrev("I have also given you some #bSP#k and the accompanying skills of a Thunder Breaker that are only available to the official knights. These skills are lightning-based, so use them wisely!");
         } else if (status == 3) {
             qm.sendPrev("Well, personally, I hope you don't lose your enthusiasm even after becoming the Cygnus Knights. Always seek out the positive even if you're in the midst of a barrage of negative items.");
         } else if (status == 4) {
