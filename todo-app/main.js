@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const edit = document.createElement('button');
                 edit.textContent = '✎';
                 edit.onclick = () => {
+                    li.classList.add('editing');
                     const newText = prompt('Edit task', todos[idx].text);
+                    li.classList.remove('editing');
                     if (newText !== null && newText.trim() !== '') {
                         todos[idx].text = newText.trim();
                         save();
