@@ -26,4 +26,5 @@ database/docker-pg-db-data
 .DS_Store
 jwzlib/
 *.log
+node_modules/
 *.jar

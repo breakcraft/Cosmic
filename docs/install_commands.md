@@ -41,3 +41,5 @@ If you plan to run with Docker, build and start using docker compose:
 ```bash
 docker compose up --build
 
+```
+This will build the server image and start the containers.
