@@ -106,6 +106,10 @@ To build the server and start it right away:
 ./build.sh
 java -jar target/Cosmic-*.jar -Dwz-path=/path/to/wz
 ```
+Run the automated tests with:
+```bash
+./run-tests.sh
+```
 
 You can also use the provided `start.sh` script which builds the jar if needed
 and then launches the server:
