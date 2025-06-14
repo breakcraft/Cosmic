@@ -163,6 +163,7 @@ server:
     DB_HOST: "localhost" 
     DB_USER: "root"
     DB_PASS: ""                        # or set the DB_PASS environment variable
+    SERVER_PORT: 8484                  # Default world port
     INIT_CONNECTION_POOL_TIMEOUT: 90    # Seconds
 
     #Login Configuration

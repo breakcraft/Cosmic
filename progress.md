@@ -26,3 +26,4 @@
 - feat: start.sh prints status
 - feat: start.sh checks java
 - docs: recommend apt upgrade
+- config: document server port
