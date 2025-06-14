@@ -8,10 +8,10 @@ body {
 
 .container {
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    width: 300px;
+    width: 320px;
 }
 
 h1 {
@@ -80,4 +80,4 @@ li button {
 #clear-completed {
     margin-left: 5px;
 }
-\nli.editing { background: #fff3cd; }
+li.editing { background: #fff3cd; }
