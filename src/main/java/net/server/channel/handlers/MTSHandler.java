@@ -25,6 +25,7 @@ import client.Character;
 import client.Client;
 import client.inventory.Equip;
 import client.inventory.InventoryType;
+import client.inventory.manipulator.KarmaManipulator;
 import client.inventory.Item;
 import client.inventory.manipulator.InventoryManipulator;
 import constants.inventory.ItemConstants;
@@ -132,6 +133,7 @@ public final class MTSHandler extends AbstractPacketHandler {
 
                         if (!i.getInventoryType().equals(InventoryType.EQUIP)) {
                             Item item = i;
+                            KarmaManipulator.toggleKarmaFlagToUntradeable(item);
                             try (PreparedStatement pse = con.prepareStatement("INSERT INTO mts_items (tab, type, itemid, quantity, expiration, giftFrom, seller, price, owner, sellername, sell_ends) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
                                 pse.setInt(1, 1);
                                 pse.setInt(2, invType.getType());
@@ -148,6 +150,7 @@ public final class MTSHandler extends AbstractPacketHandler {
                             }
                         } else {
                             Equip equip = (Equip) i;
+                            KarmaManipulator.toggleKarmaFlagToUntradeable(equip);
                             try (PreparedStatement pse = con.prepareStatement("INSERT INTO mts_items (tab, type, itemid, quantity, expiration, giftFrom, seller, price, upgradeslots, level, str, dex, `int`, luk, hp, mp, watk, matk, wdef, mdef, acc, avoid, hands, speed, jump, locked, owner, sellername, sell_ends, vicious, flag, itemexp, itemlevel, ringid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
                                 pse.setInt(1, 1);
                                 pse.setInt(2, invType.getType());
