@@ -18,3 +18,4 @@
 - docs: document custom port option
 - todo-app: show completion percentage
 - todo-app: add pointer cursor on tasks
+- docs: expand todo-app README

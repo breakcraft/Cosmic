@@ -13,3 +13,5 @@ Features:
 - Clear the entire list with `Clear All`
 - Edit tasks in place
 - Press Enter to quickly add a task
+- Progress display shows remaining items and completion percentage
+- Click a task to toggle its completed state
