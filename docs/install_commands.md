@@ -40,6 +40,7 @@ mysql -u root -p < database/sql/4-db-admin.sql
 If you plan to run with Docker, build and start using docker-compose:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
+You can now connect to the game client and start exploring Cosmic.
