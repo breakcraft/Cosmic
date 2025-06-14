@@ -42,3 +42,4 @@
 - tools: script lister
 - chore: add clean script
 - chore: newline at EOF
+- docs: add changelog placeholder
