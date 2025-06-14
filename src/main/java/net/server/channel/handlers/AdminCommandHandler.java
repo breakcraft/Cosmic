@@ -72,7 +72,6 @@ public final class AdminCommandHandler extends AbstractPacketHandler {
                     }
                 }
                 return;
-                break;
             }
             case 0x02: // Exp
                 c.getPlayer().setExp(p.readInt());
