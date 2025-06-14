@@ -14,3 +14,4 @@
 - docs: remove trailing whitespace from README
 - todo-app: added remaining count display and clear completed button
 - docs: remove duplicate container start description
+- scripts: allow custom port for todo-app server
