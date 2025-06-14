@@ -7,10 +7,12 @@ Cosmic launched on March 2021. It is based on code from a long line of server em
 
 This is mainly a Java based project, but there are also a bunch of scripts written in JavaScript.
 
-Head developer and maintainer: __Ponk__.\
+Head developer and maintainer: __Ponk__.
 Contributors: a lot of people over the years, and hopefully more to come. Big thanks to everyone who has contributed so far!
 
 Join the Discord server where most of the discussions take place: https://discord.gg/JU5aQapVZK
+
+For a full list of available features, see [docs/feature_list.md](docs/feature_list.md).
 
 ### Goals
 What we are working towards.
@@ -73,6 +75,7 @@ You will start by cloning the repository, then configure the database properties
 #### Prerequisites
 * Java 21 (I recommend [Amazon Corretto](https://aws.amazon.com/corretto))
 * IDE (I recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/))
+* Run `sudo apt-get update && sudo apt-get install -y apt-utils` on Debian/Ubuntu systems
 
 #### Steps
 
@@ -95,9 +98,16 @@ Another option is to start the server from a terminal by running a jar file. You
 
 Building the jar file is as easy as running ``./build.bat`` on Windows or ``./build.sh`` on Linux/macOS. These scripts invoke the Maven wrapper to produce a "fat" jar which contains all dependencies (by utilizing the _maven-assembly-plugin_). Note that the WZ XML files are __not__ included in the jar.
 
-To run the jar, a ``launch.bat`` file is provided for convenience. Simply double-click it and the server will start in a new terminal window. 
+To run the jar, a ``launch.bat`` (or ``launch.sh`` on Linux) file is provided for convenience. Simply double-click it and the server will start in a new terminal window. 
 
 Alternatively, run the jar file from the terminal. Just remember to provide the `wz-path` system property pointing to your wz directory.
+
+### Quick build & run
+To build the server and start it right away:
+```bash
+./build.sh
+java -jar target/Cosmic-*.jar -Dwz-path=/path/to/wz
+```
 
 ### 3 - Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.
@@ -179,3 +189,7 @@ For more information about the client and its features, see [HeavenMS on GitHub]
 Some notable features:
 * Opens in window mode by default
 * Uncapped max speed
+* Expanded resolution options
+
+### Demo Todo App
+A small web-based todo list is available in [todo-app](todo-app). Open `index.html` in a browser to try it out.

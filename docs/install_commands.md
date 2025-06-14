@@ -5,6 +5,8 @@ The following commands install the software required to build and run Cosmic on 
 ```bash
 # Update package lists
 sudo apt-get update
+# Install apt-utils
+sudo apt-get install -y apt-utils
 
 # Install Java 21
 sudo apt-get install -y openjdk-21-jdk
@@ -39,4 +41,4 @@ If you plan to run with Docker, build and start using docker compose:
 
 ```bash
 docker compose up --build
-```
+
