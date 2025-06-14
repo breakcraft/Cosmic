@@ -114,6 +114,7 @@ Run the automated tests with:
 ```bash
 ./run-tests.sh
 ```
+Add `--offline` to the script if Maven can't download dependencies.
 
 You can also use the provided `start.sh` script which builds the jar if needed and then launches the server:
 
