@@ -43,3 +43,5 @@ If you plan to run with Docker, build and start using docker-compose:
 docker-compose up --build
 ```
 
+``` 
+This will build the server image and start the containers.
