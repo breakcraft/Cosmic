@@ -3,5 +3,5 @@
 
 rem Build Cosmic using Maven wrapper
 
-mvnw.cmd -DskipTests package
+call mvnw.cmd -DskipTests package
 
