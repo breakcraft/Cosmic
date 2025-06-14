@@ -28,6 +28,7 @@ RUN mvn -f ./pom.xml clean package -Dmaven.test.skip -T 1C
 # Server creation stage
 #
 FROM amazoncorretto:21
+ENV LANG C.UTF-8
 
 # Host the server in a location that won't have permissions issues.
 WORKDIR /opt/server
