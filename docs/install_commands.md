@@ -40,4 +40,4 @@ If you plan to run with Docker, build and start using docker compose:
 
 ```bash
 docker compose up --build
-
+```

@@ -87,6 +87,8 @@ Below, I list other ways of running the server which are completely optional.
 #### Docker
 Support for Docker is also provided out of the box, as an alternative to running straight in the IDE. If you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed it's as easy as running `docker compose up`.
 
+To stop the containers run `docker compose down`.
+
 Making changes becomes a bit more tedious though as you have to rebuild the server image via `docker compose up --build`.
 
 On the first launch, the database container will run the scripts which may take so long that the server fails to start. In that case, just wait until the database is done running the scripts and then retry (Ctrl+C and re-run the command).
@@ -96,9 +98,19 @@ Another option is to start the server from a terminal by running a jar file. You
 
 Building the jar file is as easy as running ``./build.bat`` on Windows or ``./build.sh`` on Linux/macOS. These scripts invoke the Maven wrapper to produce a "fat" jar which contains all dependencies (by utilizing the _maven-assembly-plugin_). Note that the WZ XML files are __not__ included in the jar.
 
-To run the jar, a ``launch.bat`` file is provided for convenience. Simply double-click it and the server will start in a new terminal window. 
+To run the jar, a ``launch.bat`` file is provided for convenience. Simply double-click it and the server will start in a new terminal window.
 
 Alternatively, run the jar file from the terminal. Just remember to provide the `wz-path` system property pointing to your wz directory.
+
+##### Building without network access
+If you are working in an offline environment you can still compile Cosmic as long
+as the Maven dependencies have been downloaded once. Use the wrapper with the
+`-o` flag which enables offline mode:
+
+```bash
+./mvnw -o -DskipTests package
+```
+See [docs/maven_network_debug.md](docs/maven_network_debug.md) for troubleshooting tips.
 
 ### 3 - Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.

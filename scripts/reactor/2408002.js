@@ -65,11 +65,9 @@ function act() {
     eim.setIntProperty(vvpStage + "stageclear", 1);
 
     const Item = Java.type('client.inventory.Item');
-    var tehWomanfred = new Item(vvpKey, 0, 1);
-    var theWomanfred = womanfred.getReactorByName("keyDrop1");
+    var keyItem = new Item(vvpKey, 0, 1);
+    var dropReactor = womanfred.getReactorByName("keyDrop1");
     var dropper = eim.getPlayers().get(0);
-    womanfred.spawnItemDrop(theWomanfred, dropper, tehWomanfred, theWomanfred.getPosition(), true, true);
+    womanfred.spawnItemDrop(dropReactor, dropper, keyItem, dropReactor.getPosition(), true, true);
     eim.getMapInstance(240050100).dropMessage(6, "A bright flash of light, then a key suddenly appears somewhere in the map.");
 }
-	
-	
