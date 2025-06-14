@@ -5,6 +5,8 @@ The following commands install the software required to build and run Cosmic on 
 ```bash
 # Update package lists
 sudo apt-get update
+# Install apt-utils for noninteractive package management
+sudo apt-get install -y apt-utils
 
 # Install Java 21
 sudo apt-get install -y openjdk-21-jdk
@@ -29,6 +31,7 @@ After installing these packages you can build the jar and prepare the database:
 ./build.sh
 
 # Run the SQL scripts (you will be prompted for the root password)
+# Alternatively, use scripts/setup_db.sh <password>
 mysql -u root -p < database/sql/1-db_database.sql
 mysql -u root -p < database/sql/2-db_drops.sql
 mysql -u root -p < database/sql/3-db_shopupdate.sql
@@ -40,3 +43,4 @@ If you plan to run with Docker, build and start using docker compose:
 ```bash
 docker compose up --build
 ```
+

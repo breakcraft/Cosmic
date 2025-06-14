@@ -73,6 +73,7 @@ You will start by cloning the repository, then configure the database properties
 #### Prerequisites
 * Java 21 (I recommend [Amazon Corretto](https://aws.amazon.com/corretto))
 * IDE (I recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/))
+* Run `sudo apt-get update && sudo apt-get install -y apt-utils` on Debian/Ubuntu systems
 
 #### Steps
 
@@ -98,6 +99,13 @@ Building the jar file is as easy as running ``./build.bat`` on Windows or ``./bu
 To run the jar, a ``launch.bat`` file is provided for convenience. Simply double-click it and the server will start in a new terminal window. 
 
 Alternatively, run the jar file from the terminal. Just remember to provide the `wz-path` system property pointing to your wz directory.
+
+### Quick build & run
+To build the server and start it right away:
+```bash
+./build.sh
+java -jar target/Cosmic-*.jar -Dwz-path=/path/to/wz
+```
 
 ### 3 - Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.
@@ -179,3 +187,5 @@ For more information about the client and its features, see [HeavenMS on GitHub]
 Some notable features:
 * Opens in window mode by default
 * Uncapped max speed
+* Expanded resolution options
+

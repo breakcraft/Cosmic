@@ -9,4 +9,5 @@ Features:
 - Mark tasks as complete
 - Filter tasks by status (all, active, completed)
 - Persist tasks using `localStorage`
+- Clear all completed tasks with a single click
 
