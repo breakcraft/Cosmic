@@ -55,7 +55,10 @@ public class Ola {
         this.time = 360000;
 
         chr.getMap().getPortal("join00").setPortalStatus(true);
-        chr.sendPacket(PacketCreator.serverNotice(0, "The portal has now opened. Press the up arrow key at the portal to enter."));
+        chr.getMap().broadcastMessage(PacketCreator.serverNotice(5,
+                "The Ola Ola event has started! Use the portal to join."));
+        chr.sendPacket(PacketCreator.serverNotice(0,
+                "The portal has now opened. Press the up arrow key at the portal to enter."));
     }
 
     public boolean isTimerStarted() {
