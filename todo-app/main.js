@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const list = document.getElementById('todo-list');
     const filters = document.querySelectorAll('.filters button');
     const clearBtn = document.getElementById('clear-completed');
+    const toggleAllBtn = document.getElementById('toggle-all');
     const counter = document.getElementById('todo-count');
 
     let todos = JSON.parse(localStorage.getItem('todos') || '[]');
@@ -75,6 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     clearBtn.addEventListener('click', () => {
         todos = todos.filter(t => !t.done);
+        save();
+        render();
+    });
+
+    toggleAllBtn.addEventListener('click', () => {
+        const allDone = todos.every(t => t.done);
+        todos.forEach(t => t.done = !allDone);
         save();
         render();
     });
