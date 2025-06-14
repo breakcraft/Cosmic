@@ -1,0 +1,5 @@
+* text=auto
+
+# Treat specific file types as binary
+*.jar binary
+*.png binary
