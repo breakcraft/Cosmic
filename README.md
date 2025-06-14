@@ -226,6 +226,7 @@ Some notable features:
 * `tools/scripts/java_version.sh` - display the Java version.
 * `tools/scripts/check_shell.sh` - print the path of `/bin/sh`.
 * `tools/scripts/show_progress.sh` - display recent progress entries.
+* `tools/scripts/git_latest.sh` - show the latest commit info.
 * `scripts/run-todo-server.sh` - launch the demo todo app.
 
 ### Demo todo app
