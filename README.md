@@ -92,6 +92,8 @@ Below, I list other ways of running the server which are completely optional.
 Support for Docker is also provided out of the box, as an alternative to running straight in the IDE. If you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed it's as easy as running `docker compose up`.
 
 Making changes becomes a bit more tedious though as you have to rebuild the server image via `docker compose up --build`.
+The compose file defines container names for the database and server. Feel free to
+edit `docker-compose.yml` if you need to customize ports or volumes.
 
 On the first launch, the database container will run the scripts which may take so long that the server fails to start. In that case, just wait until the database is done running the scripts and then retry (Ctrl+C and re-run the command).
 
