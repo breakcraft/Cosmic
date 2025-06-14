@@ -67,7 +67,7 @@ function start(mode, type, selection) {
         } else if (status == 10) {
             qm.sendNextPrev("You may be a member of the Cygnus Knights, but that doesn't mean you're a knight. Forget being the official knight. You're not even a Knight-in-Training, yet. A lot of time will pass where you will just sit around here, doing paperwork for the Cygnus Knights, but...");
         } else if (status == 11) {
-            qm.sendNextPrev("But then again, no one is born strong, anyway. The Empress also prefers that she creates an enviroment where a string of powerful knights can be nurtured and created, as opposed to finding a supernaturally-gifted knight. For now, you'll have to become a Knight-in-Training, and make yourself much more powerful so you'll become useful later on. We'll talk about the duties of being a Cygnus Knight once you reach that level of competency.");
+            qm.sendNextPrev("But then again, no one is born strong, anyway. The Empress also prefers that she creates an environment where a string of powerful knights can be nurtured and created, as opposed to finding a supernaturally-gifted knight. For now, you'll have to become a Knight-in-Training, and make yourself much more powerful so you'll become useful later on. We'll talk about the duties of being a Cygnus Knight once you reach that level of competency.");
         } else if (status == 12) {
             qm.sendPrev("Take the portal on the left side and go straight, and you'll head towards #b Training Forest I # . There, you'll find the training instructor for the Knights, Kiku. The next time I see you, I'd like for you to be atleast at level 10.");
         }
