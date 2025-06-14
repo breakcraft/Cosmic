@@ -8,3 +8,4 @@
 - todo-app: clear completed tasks, persistent filter, edit tasks
 - docs: sanitized stray prompts
 - docs: remove trailing whitespace from README
+- todo-app: added remaining count display and clear completed button

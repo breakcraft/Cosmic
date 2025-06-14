@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.appendChild(del);
                 list.appendChild(li);
             });
-        counter.textContent = `${todos.filter(t => !t.done).length} left`;
+        const remaining = todos.filter(t => !t.done).length;
+        counter.textContent = `${remaining} item${remaining === 1 ? '' : 's'} left`;
     };
 
     form.addEventListener('submit', e => {
