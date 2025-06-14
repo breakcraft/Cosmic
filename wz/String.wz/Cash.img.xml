@@ -82,7 +82,7 @@
   </imgdir>
   <imgdir name="5010020">
     <string name="name" value="Go! Korea!"/>
-    <string name="desc" value="A special effect that follows your character for the supporting of Korea&apos;s victory.  Designate a HotKey to turn the effect ON/OFF."/>
+    <string name="desc" value="A special effect that follows your character for the supporting of Korea&apos;s victory.  Designate a HotKey to turn the effect on/off."/>
   </imgdir>
   <imgdir name="5010021">
     <string name="name" value="Skeleton of Horror"/>
