@@ -110,7 +110,6 @@ java -jar target/Cosmic-*.jar -Dwz-path=/path/to/wz
 
 You can also use the provided `start.sh` script which builds the jar if needed
 and then launches the server:
-
 ```bash
 ./start.sh -Dwz-path=/path/to/wz
 ```
