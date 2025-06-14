@@ -43,3 +43,4 @@ docker compose up --build
 
 ```
 This will build the server image and start the containers.
+This will build the server image and start the containers.
