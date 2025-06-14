@@ -100,6 +100,13 @@ To run the jar, a ``launch.bat`` file is provided for convenience. Simply double
 
 Alternatively, run the jar file from the terminal. Just remember to provide the `wz-path` system property pointing to your wz directory.
 
+### Quick build & run
+To build the server and start it right away:
+```bash
+./build.sh
+java -jar target/Cosmic-*.jar -Dwz-path=/path/to/wz
+```
+
 ### 3 - Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.
 
