@@ -225,3 +225,11 @@ Some notable features:
 * `tools/scripts/list_todos.sh` - list TODO markers in the code.
 * `tools/scripts/java_version.sh` - display the Java version.
 * `scripts/run-todo-server.sh` - launch the demo todo app.
+
+### Demo todo app
+Run a local server to try the simple todo list:
+
+```bash
+scripts/run-todo-server.sh
+```
+Then open <http://localhost:8000> in your browser. Pass a port number to the script to use a different port.

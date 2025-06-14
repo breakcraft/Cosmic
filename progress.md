@@ -30,3 +30,4 @@
 - tools: add java version script
 - docs: fix script name
 - docs: fix script name
+- docs: document demo todo server
