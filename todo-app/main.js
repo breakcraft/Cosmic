@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const list = document.getElementById('todo-list');
     const filters = document.querySelectorAll('.filters button');
     const clearBtn = document.getElementById('clear-completed');
+    const counter = document.getElementById('todo-count');
 
     let todos = JSON.parse(localStorage.getItem('todos') || '[]');
     let currentFilter = 'all';
@@ -22,6 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (t.done) li.classList.add('completed');
                 const span = document.createElement('span');
                 span.textContent = t.text;
+                span.ondblclick = () => {
+                    const edit = document.createElement('input');
+                    edit.value = t.text;
+                    edit.onblur = () => {
+                        todos[idx].text = edit.value.trim() || t.text;
+                        save();
+                        render();
+                    };
+                    li.replaceChild(edit, span);
+                    edit.focus();
+                };
                 span.onclick = () => {
                     todos[idx].done = !todos[idx].done;
                     save();
@@ -38,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.appendChild(del);
                 list.appendChild(li);
             });
+        counter.textContent = `${todos.filter(t => !t.done).length} left`;
     };
 
     form.addEventListener('submit', e => {

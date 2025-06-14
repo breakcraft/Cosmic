@@ -67,6 +67,12 @@ li button {
     color: red;
 }
 
+#todo-count {
+    text-align: center;
+    margin-top: 10px;
+    color: #555;
+}
+
 #clear-completed {
     margin-left: 5px;
 }
