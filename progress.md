@@ -37,3 +37,4 @@
 - tools: git latest helper
 - todo-app: autofocus input
 - tools: add line counter
+- docs: note sudo for docker

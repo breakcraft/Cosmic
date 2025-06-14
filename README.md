@@ -90,7 +90,7 @@ You will start by cloning the repository, then configure the database properties
 Below, I list other ways of running the server which are completely optional.
 
 #### Docker
-Support for Docker is also provided out of the box, as an alternative to running straight in the IDE. If you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed it's as easy as running `docker compose up`.
+Support for Docker is also provided out of the box, as an alternative to running straight in the IDE. If you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed it's as easy as running `docker compose up` (prepend `sudo` if your setup requires root privileges).
 
 Making changes becomes a bit more tedious though as you have to rebuild the server image via `docker compose up --build`.
 The compose file defines container names for the database and server. Feel free to
