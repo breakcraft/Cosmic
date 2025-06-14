@@ -77,6 +77,10 @@ import java.util.Set;
  * @author Matze
  */
 public class ItemInformationProvider {
+    public boolean isGenderRestricted(int itemId, int gender) {
+        return false;
+    }
+
     private static final Logger log = LoggerFactory.getLogger(ItemInformationProvider.class);
     private final static ItemInformationProvider instance = new ItemInformationProvider();
 
