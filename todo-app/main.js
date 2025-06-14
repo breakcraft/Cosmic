@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 list.appendChild(li);
             });
         const remaining = todos.filter(t => !t.done).length;
-        counter.textContent = `${remaining} item${remaining === 1 ? '' : 's'} left`;
+        const percent = todos.length === 0 ? 0 : Math.round((todos.length - remaining) / todos.length * 100);
+        counter.textContent = `${remaining} item${remaining === 1 ? '' : 's'} left (${percent}% done)`;
     };
 
     form.addEventListener('submit', e => {

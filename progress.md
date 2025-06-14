@@ -16,3 +16,4 @@
 - docs: remove duplicate container start description
 - scripts: allow custom port for todo-app server
 - docs: document custom port option
+- todo-app: show completion percentage
