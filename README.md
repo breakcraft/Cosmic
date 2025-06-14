@@ -95,7 +95,7 @@ Another option is to start the server from a terminal by running a jar file. You
 
 Building the jar file is as easy as running ``./build.bat`` on Windows or ``./build.sh`` on Linux/macOS. These scripts invoke the Maven wrapper to produce a "fat" jar which contains all dependencies (by utilizing the _maven-assembly-plugin_). Note that the WZ XML files are __not__ included in the jar.
 
-To run the jar, a ``launch.bat`` file is provided for convenience. Simply double-click it and the server will start in a new terminal window. 
+To run the jar, ``launch.bat`` (Windows) and ``launch.sh`` (Linux/macOS) are provided for convenience. Execute the script and the server will start in a new terminal window or shell session.
 
 Alternatively, run the jar file from the terminal. Just remember to provide the `wz-path` system property pointing to your wz directory.
 
