@@ -1,4 +1,3 @@
-#!/bin/bash
-# Remove build artifacts
-rm -rf target
-rm -rf logs
+#!/bin/sh
+# Remove Maven target directories
+find . -name target -type d -exec rm -rf {} +
