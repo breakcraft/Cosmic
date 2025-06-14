@@ -24,7 +24,7 @@
  * @author Moogra
  * @NPC : Gachapon - Henesys
  * @NPC ID : 9100101
- * TODO: FINISH REAL TEXT, use sendSimpleNext for text selection
+ * Example Gachapon dialogue using sendSimple and sendNext
 */
 
 var status = 0;
