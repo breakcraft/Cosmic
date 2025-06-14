@@ -10,3 +10,4 @@
 - chore: fix typos across NPC scripts
 - scripts: added unzip_here helper
 - feat: added start.sh launcher
+- docs: remove trailing whitespace from README
