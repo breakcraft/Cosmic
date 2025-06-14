@@ -222,6 +222,6 @@ Some notable features:
 ### Utility scripts
 * `tools/scripts/run-tests.sh` - run the Maven test suite.
 * `tools/scripts/unzip_here.sh` - extract a zip archive in-place.
-* `tools/scripts/todo_count.sh` - count TODO markers in the code.
+* `tools/scripts/list_todos.sh` - list TODO markers in the code.
 * `tools/scripts/java_version.sh` - display the Java version.
 * `scripts/run-todo-server.sh` - launch the demo todo app.

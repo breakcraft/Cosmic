@@ -28,3 +28,5 @@
 - docs: recommend apt upgrade
 - config: document server port
 - tools: add java version script
+- docs: fix script name
+- docs: fix script name
