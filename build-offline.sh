@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 # Build the server jar in offline mode using the Maven wrapper
 DIR="$(dirname "$0")"
 cd "$DIR" || exit 1
