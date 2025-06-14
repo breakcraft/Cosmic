@@ -7,7 +7,7 @@
 5010006 - Baby Angel - A lovely effect that shows a baby angel floating around as your protector.  Designate a HotKey to turn the effect on/off.
 5010007 - Fugitive - A special effect that puts a poster in front of your face as if you're being wanted around the world.  Designate a HotKey to turn the effect on/off.
 5010008 - Mr. Jackpot - A special effect used to increase the chance of winning with Slot Machine by 2x. Designate a HotKey to turn the effect on/off.
-5010009 - Martial Effect - A special effect that appears Chinese Falg. Designate a HotKey to turn the effect on/off.
+5010009 - Martial Effect - A special effect that appears Chinese Flag. Designate a HotKey to turn the effect on/off.
 5010010 - Play with Me - A special effect in which you'll see two babies floating on the cloud as a sign of friendship. Designate a HotKey to turn the effect on/off.
 5010011 - Loner - A special effect that displays that the owner would like to be left alone. Designate a HotKey to turn the effect on/off.
 5010012 - Equalizer - A special equalizer effect that is given as a prize at the Maple Member Shop. Designate a HotKey to turn the effect on/off.
