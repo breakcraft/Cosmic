@@ -21,3 +21,4 @@
 - docs: expand todo-app README
 - tools: add handbook listing script
 - chore: ignore vscode folder
+- docs: add script overview
