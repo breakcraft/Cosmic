@@ -38,3 +38,4 @@
 - todo-app: autofocus input
 - tools: add line counter
 - docs: note sudo for docker
+- tools: list_todos accepts paths
