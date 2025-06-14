@@ -8,3 +8,4 @@
 - todo-app: clear completed tasks, persistent filter, edit tasks
 - docs: sanitized stray prompts
 - chore: fix typos across NPC scripts
+- scripts: added unzip_here helper
