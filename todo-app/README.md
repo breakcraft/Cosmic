@@ -11,4 +11,5 @@ Features:
 - Persist tasks using `localStorage`
 - Clear all completed tasks with a single click
 - Clear the entire list with `Clear All`
-
+- Edit tasks in place
+- Press Enter to quickly add a task
