@@ -1,6 +1,7 @@
 version: '3'
 services:
   maplestory:
+    container_name: cosmic_server
     build: .
     depends_on:
       - db
@@ -21,6 +22,7 @@ services:
       DB_HOST: "db" ## Remember if this is present it will OVERRIDE the host in the config.yaml, if you put here anything other than db, you'll need to change the config.yaml jdbc string to port 3307, and not port 3306
     
   db:
+    container_name: cosmic_db
     image: mysql:8.4.0
     environment:
       MYSQL_DATABASE: "cosmic"
