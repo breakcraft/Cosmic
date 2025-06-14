@@ -9,3 +9,4 @@
 - docs: sanitized stray prompts
 - docs: remove trailing whitespace from README
 - todo-app: added remaining count display and clear completed button
+- docs: remove duplicate container start description
