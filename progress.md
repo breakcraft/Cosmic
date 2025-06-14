@@ -9,3 +9,4 @@
 - docs: sanitized stray prompts
 - chore: fix typos across NPC scripts
 - scripts: added unzip_here helper
+- feat: added start.sh launcher
