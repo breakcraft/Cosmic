@@ -70,7 +70,7 @@
   </imgdir>
   <imgdir name="5010017">
     <string name="name" value="Twinkling Star"/>
-    <string name="desc" value="A special star effect for a special day.  Designate a HotKey to turn the effect ON/OFF."/>
+    <string name="desc" value="A special star effect for a special day.  Designate a HotKey to turn the effect on/off."/>
   </imgdir>
   <imgdir name="5010018">
     <string name="name" value="Smile"/>
