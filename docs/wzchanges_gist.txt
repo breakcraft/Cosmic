@@ -15,8 +15,7 @@ Quest.wz/*:
 
 String.wz/*:
 	Fixed some NPC speeches.
-	Updated MonsterBook with current drop data on the sql's DB, using Ronan's
-MobBookUpdate facility.
+        Updated MonsterBook with current drop data on the sql's DB, using Ronan's MobBookUpdate facility.
 
 
 P.S.:
