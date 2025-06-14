@@ -66,7 +66,7 @@
   </imgdir>
   <imgdir name="5010016">
     <string name="name" value="Siren"/>
-    <string name="desc" value="A siren effect that can be used under emergencies.  Designate a HotKey to turn the effect ON/OFF."/>
+    <string name="desc" value="A siren effect that can be used under emergencies.  Designate a HotKey to turn the effect on/off."/>
   </imgdir>
   <imgdir name="5010017">
     <string name="name" value="Twinkling Star"/>
