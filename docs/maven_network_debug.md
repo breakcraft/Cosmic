@@ -33,9 +33,11 @@ to talk to Central, here are some known solutions:
 3. **Force IPv4 if IPv6 is broken.** Maven may attempt IPv6 first, which can
    fail with `Network is unreachable` if your ISP does not provide IPv6. Run
    Maven with `-Djava.net.preferIPv4Stack=true` or disable IPv6 system-wide.
+   If the wrapper ignores this flag, export `JAVA_TOOL_OPTIONS=-Djava.net.preferIPv4Stack=true`.
 4. **Validate proxy settings.** A stale or empty proxy configuration in
    `settings.xml` can block all outbound connections. Remove proxy entries if
    your network does not require them.
 
 These steps resolve the majority of reported connectivity issues.
+
 

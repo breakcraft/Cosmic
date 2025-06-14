@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('todo-input');
     const list = document.getElementById('todo-list');
     const filters = document.querySelectorAll('.filters button');
+    const clearBtn = document.getElementById('clear-completed');
 
     let todos = JSON.parse(localStorage.getItem('todos') || '[]');
     let currentFilter = 'all';
@@ -24,6 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     todos[idx].done = !todos[idx].done;
                     save();
                     render();
+                };
+                span.ondblclick = () => {
+                    const newText = prompt('Edit task', todos[idx].text);
+                    if (newText) {
+                        todos[idx].text = newText;
+                        save();
+                        render();
+                    }
                 };
                 const del = document.createElement('button');
                 del.textContent = '✖';
@@ -56,6 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
             currentFilter = btn.dataset.filter;
             render();
         });
+    });
+
+    clearBtn.addEventListener('click', () => {
+        todos = todos.filter(t => !t.done);
+        save();
+        render();
     });
 
     render();
