@@ -18,7 +18,7 @@
 5010017 - Twinkling Star - A special star effect for a special day.  Designate a HotKey to turn the effect on/off.
 5010018 - Smile - A smile effect best used when you're in a great mood! Designate a HotKey to turn the effect on/off.
 5010019 - Heart - A heart effect you can use to show your love to the others.  Designate a HotKey to turn the effect on/off.
-5010020 - Go! Korea! - A special effect that follows your character for the supporting of Korea's victory.  Designate a HotKey to turn the effect ON/OFF.
+5010020 - Go! Korea! - A special effect that follows your character for the supporting of Korea's victory.  Designate a HotKey to turn the effect on/off.
 5010021 - Skeleton of Horror - This skull was found somewhere around the remains, and it'll be with you until you wish for otherwise. Double-click on the item or on the Key Config, configure this on a button of your choice to turn the effect on/off.
 5010022 - Twinkling Star - A number of twinkling stars surrounds the character in this special effect.
 5010023 - Pumping Heart - A special effect that captures the feeling of wanting to express the feeling of love to someone special. Double-click on the item or on the Key Config, configure this on a button of your choice to turn the effect on/off.
