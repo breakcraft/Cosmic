@@ -14,7 +14,7 @@
 5010013 - Fireworks - A special effect of the fireworks that is given as a prize at the Maple Member Shop. Designate a HotKey to turn the effect on/off.
 5010014 - Stormy Cloud - A special effect that displays the stormy cloud with rain and lightning hovering around the owner's head. Designate a HotKey to turn the effect on/off.
 5010015 - 777 Effect - A special effect used to increase the number of balls obtained from winning with Slot Machine by 2x. Designate a HotKey to turn the effect on/off.
-5010016 - Siren - A siren effect that can be used under emergencies.  Designate a HotKey to turn the effect ON/OFF.
+5010016 - Siren - A siren effect that can be used under emergencies.  Designate a HotKey to turn the effect on/off.
 5010017 - Twinkling Star - A special star effect for a special day.  Designate a HotKey to turn the effect ON/OFF.
 5010018 - Smile - A smile effect best used when you're in a great mood! Designate a HotKey to turn the effect ON/OFF.
 5010019 - Heart - A heart effect you can use to show your love to the others.  Designate a HotKey to turn the effect ON/OFF.
