@@ -228,6 +228,7 @@ Some notable features:
 * `tools/scripts/show_progress.sh` - display recent progress entries.
 * `tools/scripts/git_latest.sh` - show the latest commit info.
 * `tools/scripts/count_lines.sh` - count lines of code.
+* `tools/scripts/list_scripts.sh` - list all helper scripts.
 * `scripts/run-todo-server.sh` - launch the demo todo app.
 
 ### Demo todo app
