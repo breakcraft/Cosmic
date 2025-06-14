@@ -17,3 +17,4 @@
 - scripts: allow custom port for todo-app server
 - docs: document custom port option
 - todo-app: show completion percentage
+- todo-app: add pointer cursor on tasks

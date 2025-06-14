@@ -64,6 +64,10 @@ li.completed span {
     color: #888;
 }
 
+li span {
+    cursor: pointer;
+}
+
 li button {
     background: transparent;
     border: none;
