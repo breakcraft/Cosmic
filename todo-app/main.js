@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('todo-input');
     const list = document.getElementById('todo-list');
     const filters = document.querySelectorAll('.filters button');
+    const clearBtn = document.getElementById('clear-completed');
 
     let todos = JSON.parse(localStorage.getItem('todos') || '[]');
     let currentFilter = 'all';
@@ -57,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
             currentFilter = btn.dataset.filter;
             render();
         });
+    });
+
+    clearBtn.addEventListener('click', () => {
+        todos = todos.filter(t => !t.done);
+        save();
+        render();
     });
 
     render();

@@ -66,3 +66,7 @@ li button {
     cursor: pointer;
     color: red;
 }
+
+#clear-completed {
+    margin-left: 5px;
+}
