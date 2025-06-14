@@ -224,6 +224,7 @@ Some notable features:
 * `tools/scripts/unzip_here.sh` - extract a zip archive in-place.
 * `tools/scripts/list_todos.sh` - list TODO markers in the code.
 * `tools/scripts/java_version.sh` - display the Java version.
+* `tools/scripts/check_shell.sh` - print the path of `/bin/sh`.
 * `scripts/run-todo-server.sh` - launch the demo todo app.
 
 ### Demo todo app

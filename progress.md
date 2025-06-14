@@ -31,3 +31,4 @@
 - docs: fix script name
 - docs: fix script name
 - docs: document demo todo server
+- tools: add shell path helper
