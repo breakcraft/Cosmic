@@ -24,7 +24,8 @@
  * @author Moogra
  * @NPC : Gachapon - Henesys
  * @NPC ID : 9100101
- * Example Gachapon dialogue using sendSimple and sendNext
+ * Presents a brief description of how Gachapon works and lets
+ * the player use a ticket if they have one available.
 */
 
 var status = 0;
