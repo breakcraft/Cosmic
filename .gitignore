@@ -30,3 +30,4 @@ node_modules/
 *.jar
 progress.log
 .env
+.vscode/

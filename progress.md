@@ -20,3 +20,4 @@
 - todo-app: add pointer cursor on tasks
 - docs: expand todo-app README
 - tools: add handbook listing script
+- chore: ignore vscode folder
