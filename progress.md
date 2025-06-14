@@ -43,3 +43,4 @@
 - chore: add clean script
 - chore: newline at EOF
 - docs: add changelog placeholder
+- todo-app: helper to clear storage
