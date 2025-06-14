@@ -309,3 +309,4 @@ Localhost:
 * Removed a block that would show up when trying to apply an attack gem on equipments that aren't weapons.
 
 ---------------------------
+
