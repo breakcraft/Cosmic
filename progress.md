@@ -24,3 +24,4 @@
 - docs: add script overview
 - docs: mention handbook script
 - feat: start.sh prints status
+- feat: start.sh checks java
