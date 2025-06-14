@@ -36,3 +36,4 @@
 - todo-app: clear input on escape
 - tools: git latest helper
 - todo-app: autofocus input
+- tools: add line counter

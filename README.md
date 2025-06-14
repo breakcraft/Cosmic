@@ -227,6 +227,7 @@ Some notable features:
 * `tools/scripts/check_shell.sh` - print the path of `/bin/sh`.
 * `tools/scripts/show_progress.sh` - display recent progress entries.
 * `tools/scripts/git_latest.sh` - show the latest commit info.
+* `tools/scripts/count_lines.sh` - count lines of code.
 * `scripts/run-todo-server.sh` - launch the demo todo app.
 
 ### Demo todo app
