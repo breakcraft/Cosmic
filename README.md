@@ -99,7 +99,7 @@ On the first launch, the database container will run the scripts which may take 
 #### Jar
 Another option is to start the server from a terminal by running a jar file. You first need to build the jar file from source which requires [Maven](https://maven.apache.org/). Fortunately, [Maven Wrapper](https://maven.apache.org/wrapper/) is provided so you don't have to install Maven separately. If Maven fails to resolve dependencies from "central", check your network connectivity as described in [maven_network_debug.md](docs/maven_network_debug.md).
 
-Building the jar file is as easy as running ``./build.bat`` on Windows or ``./build.sh`` on Linux/macOS. These scripts invoke the Maven wrapper to produce a "fat" jar which contains all dependencies (by utilizing the _maven-assembly-plugin_). Note that the WZ XML files are __not__ included in the jar.
+Building the jar file is as easy as running ``./build.bat`` on Windows or ``./build.sh`` on Linux/macOS. These scripts invoke the Maven wrapper to produce a "fat" jar which contains all dependencies (by utilizing the _maven-assembly-plugin_). Note that the WZ XML files are __not__ included in the jar. Use ``./build-offline.sh`` if you have all dependencies cached and want a network-free build.
 
 To run the jar, a ``launch.bat`` file is provided for convenience. Simply double-click it and the server will start in a new terminal window.
 
