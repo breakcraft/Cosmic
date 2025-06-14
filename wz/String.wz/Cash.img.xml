@@ -38,7 +38,7 @@
   </imgdir>
   <imgdir name="5010009">
     <string name="name" value="Martial Effect"/>
-    <string name="desc" value="A special effect that appears Chinese Falg. Designate a HotKey to turn the effect on/off."/>
+    <string name="desc" value="A special effect that appears Chinese Flag. Designate a HotKey to turn the effect on/off."/>
   </imgdir>
   <imgdir name="5010010">
     <string name="name" value="Play with Me"/>
