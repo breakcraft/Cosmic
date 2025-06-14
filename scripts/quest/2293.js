@@ -50,8 +50,9 @@ function end(mode, type, selection) {
         status++;
     }
 
-    // TODO: there are 10 different riffs; quest2288/0 through quest2288/9.
-    // One of the riffs should play randomly upon the death of Spirit of Rock, but there is currently no system in place to achieve that in a reasonable way.
+    // There are 10 different riffs: quest2288/0 through quest2288/9.
+    // Ideally one would be selected at random when Spirit of Rock dies and then
+    // registered for all players on the map.
     // Spirit of Rock (4300013) spawns an invisible mob on death (Spirit of Rock's Soul, 4300017) which was likely used in some clever way in GMS.
     // The map (103040430) has two scripts which could be useful: onFirstUserEnter=Depart_Boss_F_Enter and onUserEnter=Depart_BossEnter
     // Currently, the best hypothesis is that one of the map scripts registers some form of "mob spawn" action/script that runs once the invisible mob spawns.
