@@ -11,3 +11,4 @@
 - scripts: added unzip_here helper
 - feat: added start.sh launcher
 - docs: remove trailing whitespace from README
+- todo-app: added remaining count display and clear completed button
