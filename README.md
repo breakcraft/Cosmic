@@ -225,6 +225,7 @@ Some notable features:
 * `tools/scripts/list_todos.sh` - list TODO markers in the code.
 * `tools/scripts/java_version.sh` - display the Java version.
 * `tools/scripts/check_shell.sh` - print the path of `/bin/sh`.
+* `tools/scripts/show_progress.sh` - display recent progress entries.
 * `scripts/run-todo-server.sh` - launch the demo todo app.
 
 ### Demo todo app

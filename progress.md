@@ -32,3 +32,4 @@
 - docs: fix script name
 - docs: document demo todo server
 - tools: add shell path helper
+- tools: show progress helper
