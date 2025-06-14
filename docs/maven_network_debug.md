@@ -40,3 +40,4 @@ to talk to Central, here are some known solutions:
 These steps resolve the majority of reported connectivity issues.
 
 
+\nIf you have fetched dependencies once, you can build offline using ./build-offline.sh
