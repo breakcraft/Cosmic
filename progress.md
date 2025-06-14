@@ -6,3 +6,4 @@
 - docs: clarify apt-utils prerequisite and offline build helper
 - docs: fixed install_commands formatting
 - todo-app: clear completed tasks, persistent filter, edit tasks
+- docs: sanitized stray prompts
