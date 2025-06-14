@@ -22,6 +22,9 @@
 database/docker-db-data
 database/docker-pg-db-data
 
+# Ignore logs produced by helper scripts
+scripts/*.log
+
 # macOS files
 .DS_Store
 jwzlib/
