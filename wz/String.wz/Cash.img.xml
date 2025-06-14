@@ -78,7 +78,7 @@
   </imgdir>
   <imgdir name="5010019">
     <string name="name" value="Heart"/>
-    <string name="desc" value="A heart effect you can use to show your love to the others.  Designate a HotKey to turn the effect ON/OFF."/>
+    <string name="desc" value="A heart effect you can use to show your love to the others.  Designate a HotKey to turn the effect on/off."/>
   </imgdir>
   <imgdir name="5010020">
     <string name="name" value="Go! Korea!"/>
