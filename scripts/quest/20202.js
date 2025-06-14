@@ -44,7 +44,7 @@ function end(mode, type, selection) {
             qm.sendYesNo("You managed to bring all of #t4032097#!!! Okay, I believe that your are now qualified to become an official knight! Do you want to become one?");
         } else if (status == 1) {
             if (qm.getPlayer().getJob().getId() == 1200 && qm.getPlayer().getRemainingSp() > ((qm.getPlayer().getLevel() - 30) * 3)) {
-                qm.sendNext("Wa, wait... you have way too much #bSP#k with you. You'll need to spend more SP on 1st-level skills to become an official knight.");
+                qm.sendNext("Wait... you have way too much #bSP#k with you. You'll need to spend more SP on 1st-level skills to become an official knight.");
                 qm.dispose();
             } else {
                 if (qm.getPlayer().getJob().getId() != 1210) {
