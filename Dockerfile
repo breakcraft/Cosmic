@@ -5,7 +5,7 @@
 # Cosmic JAR creation stage
 #
 FROM maven:3.9.6-amazoncorretto-21 AS jar
-RUN apt-get update && apt-get install -y apt-utils
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
 # Build in a separated location which won't have permissions issues.
 WORKDIR /opt/cosmic
